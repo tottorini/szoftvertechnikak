@@ -153,7 +153,7 @@ A következő kód egy lehetséges megoldást mutat, a megoldás részleteit a k
                     // a Split-tel a ;-k mentén feldaraboljuk
                     string[] lineItems = line.Split(';');
 
-                    // Első elem, amiben az szerző nevét várjuk
+                    // Első elem, amiben a szerző nevét várjuk
                     // A Trim eltávolítja a vezető és záró whitespace-karaktereket
                     string artist = lineItems[0].Trim();
 

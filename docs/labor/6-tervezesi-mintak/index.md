@@ -354,7 +354,7 @@ NameMaskingAnonymizer anonymizer = new("us-500.csv", "***");
 anonymizer.Run();
 ```
 
-El is készültünk. Próbáljuk ki, hogy jobban "érezzük", valóban működnek az kiterjesztési pontok (de ha kevés az időnk a labor során, ez különösebben nem fontos, hasonlót már korábbi félévekben C++/Java nyelvek kontextusában is csináltunk):
+El is készültünk. Próbáljuk ki, hogy jobban "érezzük", valóban működnek a kiterjesztési pontok (de ha kevés az időnk a labor során, ez különösebben nem fontos, hasonlót már korábbi félévekben C++/Java nyelvek kontextusában is csináltunk):
 
 * Visual Studioban a *TemplateMethod-0-Begin* projekt legyen a startup projekt, ha ezt eddig még nem állítottuk be.
 * Tegyünk egy töréspontot az `AnonymizerBase` osztály `var person = Anonymize(persons[i]);` sorára.
