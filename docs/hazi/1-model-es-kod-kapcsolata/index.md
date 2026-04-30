@@ -6,7 +6,7 @@ authors: bzolka
 
 ## Bevezetés
 
-A feladathoz nem kapcsolódik előadás.  A feladatok elméleti és gyakorlati hátteréül az  "1. A modell és a kód kapcsolata" vezetett laborgyakorlat szolgál:
+A feladathoz nem kapcsolódik előadás. A feladatok elméleti és gyakorlati hátteréül az "1. A modell és a kód kapcsolata" vezetett laborgyakorlat szolgál:
 
 - Ezt a laborgyakorlatot a hallgatók a gyakorlatvezető útmutatásával, a gyakorlatvezetővel közösen vezetett módon végzik/végezték el.
 - A laborgyakorlathoz útmutató tartozik, mely részletekbe menően bemutatja az elméleti hátteret, valamint lépésenként ismerteti a megoldás elkészítését: [1. A modell és a kód kapcsolata](../../labor/1-model-es-kod-kapcsolata/index.md)
@@ -22,7 +22,7 @@ Az önálló gyakorlat célja:
 A szükséges fejlesztőkörnyezetről [itt](../fejlesztokornyezet/index.md) található leírás.
 
 !!! warning "C# 12-es (és újabb) nyelvi elemek használata"
-    A házi feladat megoldása során C# 12-es, és annál újabb nyelvi elemek, (pl. primary constructor) nem használhatók, ugyanis a GitHub-on futó ellenőrző ezeket még nem támogatja.
+    A házi feladat megoldása során C# 12-es, és annál újabb nyelvi elemek (pl. primary constructor) nem használhatók, ugyanis a GitHub-on futó ellenőrző ezeket még nem támogatja.
 
 ## A kiindulási keret letöltése, az elkészült megoldás feltöltése
 
@@ -227,7 +227,7 @@ Egy síkbeli vektorgrafikus alakzatokat kezelni képes CAD tervezőalkalmazás e
 - A `TextArea` osztálynak kötelezően a jelen feladathoz tartozó `Controls.dll` osztálykönyvtár `Textbox` osztályából kell származnia. A `Controls.dll` egy .NET szerelvény, lefordított formában tartalmaz osztályokat.
 
     !!! failure "Interfészben alapértelmezett implementáció"
-        Bár C# 8-tól támogatott .NET interfészben alapértelmezett implementáció megadása. Ez sokszor hasznos technika, de a megoldásban nem alkalmazható, ennél "klasszikusabb" megközelítést kell választani.
+        C# 8-tól támogatott .NET interfészben alapértelmezett implementáció megadása. Ez sokszor hasznos technika, de a megoldásban nem alkalmazható, ennél "klasszikusabb" megközelítést kell választani.
 
 - A megvalósítás során törekedjen egységbezárásra: pl. az alakzatok menedzselése legyen egy **erre dedikált osztály** feladata.
   
@@ -250,7 +250,7 @@ A megvalósítás során jelentős egyszerűsítéssel élünk:
 
 ### Osztálykönyvtárak használata
 
-A megoldás az [1. A modell és a kód kapcsolata](../../labor/1-model-es-kod-kapcsolata/index.md) laborgyakorlat mintájára kidolgozható. Jelen feladat egy lényeges részletében különbözik tőle: míg abban csak szóban kötöttük ki, hogy a `DisplayBase` ősosztály forráskódja nem megváltoztató, jelen esetben a `Textbox` ősosztályunk esetében ez adott, hiszen csak egy lefordított dll formájában áll rendelkezésre.
+A megoldás az [1. A modell és a kód kapcsolata](../../labor/1-model-es-kod-kapcsolata/index.md) laborgyakorlat mintájára kidolgozható. Jelen feladat egy lényeges részletében különbözik tőle: míg abban csak szóban kötöttük ki, hogy a `DisplayBase` ősosztály forráskódja nem megváltoztatható, jelen esetben a `Textbox` ősosztályunk esetében ez adott, hiszen csak egy lefordított dll formájában áll rendelkezésre.
 
 !!! note 
     Többkomponensű alkalmazások fejlesztéséről, szerelvény és projekt referencia alkalmazásáról az első előadáson volt szó, ha nem emlékszel erre a témakörre, célszerű átismételni.
@@ -263,7 +263,7 @@ A következőkben nézzük meg, milyen lépésekben lehet egy ilyen dll-ben lev�
 2. A megjelenő ablak bal oldalán válasszuk ki a *Browse* elemet,
    1. Ha az ablak közepén a listában megjelenik a `Controls.dll`, pipáljuk ki az elemet.
    2. Ha nem jelenik meg, akkor kattintsunk az ablakunk jobb alsó részében levő *Browse...* gombon.
-        1. A megjelenő fájlböngésző ablakban navigáljunk el a `Controls.dll` fájlhoz, és kattintsunk rajta  duplán, ami bezárja az ablakot.
+        1. A megjelenő fájlböngésző ablakban navigáljunk el a `Controls.dll` fájlhoz, és kattintsunk rajta duplán, ami bezárja az ablakot.
         2. A *Reference Manager* ablakunk középső részén a `Controls.dll` látható kipipálva, az OK gombbal zárjuk be az ablakot.
 3. Az OK gombbal zárjuk be az ablakot.
 
@@ -278,7 +278,7 @@ A `Textbox` osztály, melyből a `TextArea` osztályunkat származtatni kell, a 
 Amennyiben szükség lenne rá, a többi művelet felderítésében az *Object Browser* segít. Az *Object Browser* a *View* menüből az *Object Browser* menü kiválasztásával nyitható meg. Az *Object Browser* egy új tabfülön jelenik meg.
 
 !!! note "Ha üres az Object Browser nézet"
-    A Visual Studio 2026 hajlamos arra, hogy mindaddig, amíg nincs egy forrásfájl megnyitva, az Object Browserben nem jelenít meg semmit (csak egy "No information" kezdetű szöveg látszik). Ha azt tapasztaljuk, hogy üres az Object Browser nézet, csak nyissuk meg a Program.cs fájl a Solution Explorerben, majd váltsunk vissza az Object Browser tabfülre, ahol így már megjelennek a komponensek. 
+    A Visual Studio 2026 hajlamos arra, hogy mindaddig, amíg nincs egy forrásfájl megnyitva, az Object Browserben nem jelenít meg semmit (csak egy "No information" kezdetű szöveg látszik). Ha azt tapasztaljuk, hogy üres az Object Browser nézet, csak nyissuk meg a Program.cs fájlt a Solution Explorerben, majd váltsunk vissza az Object Browser tabfülre, ahol így már megjelennek a komponensek. 
 
 Az Object Browserben a `Controls` komponenst lenyitogatva az egyes csomópontokat kiválasztva (névtér, osztály) az adott csomópont jellemzői jelennek meg: pl. az osztály nevén állva az osztály tagjait látjuk.
 
