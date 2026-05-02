@@ -10,7 +10,7 @@ A házi feladatban a 3. XAML laboron megvalósított személy regisztrációs al
 
 Az önálló feladat a WinUI előadássorozat végén elhangzott MVVM témakörre épít. A feladatok gyakorlati hátteréül a [5. labor – MVVM](../../labor/5-mvvm/index.md) laborgyakorlat szolgál.
 
-Az kapcsolódó előadásanyag feldolgozásával, jelen önálló gyakorlat feladatai a feladatleírást követő rövidebb iránymutatás segítségével (néha alapértelmezetten összecsukva) önállóan elvégezhetők.
+A kapcsolódó előadásanyag feldolgozásával, jelen önálló gyakorlat feladatai a feladatleírást követő rövidebb iránymutatás segítségével (néha alapértelmezetten összecsukva) önállóan elvégezhetők.
 
 Az önálló gyakorlat célja:
 
@@ -73,7 +73,7 @@ Első lépésben NuGet referenciát kell tenni az MVVM Toolkitre annak érdekéb
 
 **Feladat**: Vegyél fel egy NuGet referenciát a projektben a "CommunityToolkit.Mvvm" NuGet csomagra. Ez a Visual Studio oldal írja le, hogyan lehet egy NuGet referenciát a projektbe felvenni [NuGet Package Manager](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio#nuget-package-manager). Az előző link az oldalon belül a "NuGet Package Manager" fejezetre ugrik, az itt megadott négy lépést kell követni (természetesen azzal a különbséggel, hogy nem a "Newtonsoft.Json" hanem a "CommunityToolkit.Mvvm" csomagra kell a referenciát felvenni).
 
-Most, hogy a projektünkbe felvettük ezt a NuGet referenciát, a következő build során (mivel annak részeként lefut egy NuGet restore lépés!) letöltődik a NuGet csomag, kicsomagolódnak a benne levő DLL-ek a kimeneti mappába, így azok már szerves részét képezik az alkalmazásnak (egy NuGet csomag tulajdonképpen egy zip állomány). Fontos megemlíteni, hogy Git-be sem a NuGet zip, sem a benne levő dll-ek nem kerülnek fel, a solution gyökerében levő `.gitignore` fájl ezeket kiszűri. Pont ez a NuGet koncepció lényege: a repository kicsi maradhat, mert a projektfájl csak hivatkozásokat tartalmazza a NuGet csomagokra, és amikor valaki egy frissen clone-ozott solution-t buildel, csak ekkor töltődnek le az online NuGet forrásokból a hivatkozott NuGet csomagok.
+Most, hogy a projektünkbe felvettük ezt a NuGet referenciát, a következő build során (mivel annak részeként lefut egy NuGet restore lépés!) letöltődik a NuGet csomag, kicsomagolódnak a benne levő DLL-ek a kimeneti mappába, így azok már szerves részét képezik az alkalmazásnak (egy NuGet csomag tulajdonképpen egy zip állomány). Fontos megemlíteni, hogy Git-be sem a NuGet zip, sem a benne levő dll-ek nem kerülnek fel, a solution gyökerében levő `.gitignore` fájl ezeket kiszűri. Pont ez a NuGet koncepció lényege: a repository kicsi maradhat, mert a projektfájl csak hivatkozásokat tartalmaz a NuGet csomagokra, és amikor valaki egy frissen clone-ozott solution-t buildel, csak ekkor töltődnek le az online NuGet forrásokból a hivatkozott NuGet csomagok.
 
 :warning: A fenti NuGet-re vonatkozó koncepciók ismerete fontos, a tananyag fontos részét képezik!
 
@@ -114,7 +114,7 @@ Ez a kód, egy fordítást követően, alapjaiban ugyanazt a megoldást eredmén
 
 * Egyrészt az `ObservableObject` ős már megvalósítja az `INotifyPropertyChanged` interfészt, így a `PropertyChanged` esemény tagot is tartalmazza, ezt a származtatás révén "megörökli" az osztályunk.
 * A fordítás során lefut az MVVM Toolkit kódgenerátora, mely minden `ObservableProperty` attribútummal ellátott tagváltozóhoz generál egy ugyanolyan nevű, de nagybetűvel kezdődő tulajdonságot az osztályba, mely tulajdonság settere elsüti megfelelő feltételek mellett és megfelelő paraméterekkel a `PropertyChanged` eseményt. Hurrá, ezt a kódot akkor nem nekünk kell megírni.
-* Kérdés, hol keletkezik ez a kód. Az osztályunk egy másik "partial" részében. Egy fordítást követően Visual Studio-ban jobb gombbal kattintsunk a `Person` osztály nevén, majd a felugró menüben "Go to Definition". Ekkor egy alsó ablakban két találatot is kapunk: az egyik az általunk írt fenti kód, a másik ("public class Person") a generált részre ugrik egy duplakatt hatására: látszik, hogy viszonylag terjengős kódot generált a kódgenerátor, de ami nekünk fontos, hogy itt található a `Name` és `Age` tulajdonság, benne - többek között - a `OnPropertyChanged` elsütésével.
+* Kérdés, hol keletkezik ez a kód. Az osztályunk egy másik "partial" részében. Egy fordítást követően Visual Studio-ban jobb gombbal kattintsunk a `Person` osztály nevén, majd a felugró menüben "Go to Definition". Ekkor egy alsó ablakban két találatot is kapunk: az egyik az általunk írt fenti kód, a másik ("public class Person") a generált részre ugrik egy duplakatt hatására: látszik, hogy viszonylag terjengős kódot generált a kódgenerátor, de ami nekünk fontos, hogy itt található a `Name` és `Age` tulajdonság, benne - többek között - az `OnPropertyChanged` elsütésével.
 
 :exclamation: A kódgenerátor szokásosan az osztályunk másik "partial" felébe dolgozik, annak érdekében, hogy ne keveredjen az általunk írt és a generált kód! A partial classokat leggyakrabban a kézzel írt és a generált kód "különválasztására" használjuk.
 
@@ -140,7 +140,7 @@ A következőkben átalakítjuk az alkalmazásunk architektúráját, hogy az MV
 Mit is jelent az MVVM minta a példánkra vetítve:
 
 * A model osztály a `Models` mappában levő `Person` osztály, egy személy adatait reprezentálja (UI logikát NEM tartalmaz, független mindenféle megjelenítéstől).
-* Jelen pillanatban minden,  megjelenítéshez kapcsolódó leírás/logika a `PersonListPage`-ben van. :exclamation: A mostani `PersonListPage`-et **kettévágjuk**:
+* Jelen pillanatban minden, megjelenítéshez kapcsolódó leírás/logika a `PersonListPage`-ben van. :exclamation: A mostani `PersonListPage`-et **kettévágjuk**:
     * A `PersonListPage.xaml` és a code behindja lesz a View.
     * Bevezetünk egy a `PersonListPage`-hez tartozó ViewModel-t `PersonListPageViewModel` néven.
         * :exclamation: Kulcsfontosságú: a `PersonListPage` code behindból minden megjelenítési logikát átmozgatunk a `PersonListPageViewModel`-be. **A minta lényege az, hogy a View csak tisztán a felület leírását tartalmazza, a megjelenítési logikának a ViewModelben van a helye.** 
@@ -244,7 +244,7 @@ Jelen pillanatban a "-" gomb vonatkozásában két feladatunk van:
 * A `Click` esetén az eseménykezelő művelet futtatása
 * A gomb tiltása/engedélyezése az `IsEnabled` tulajdonság segítségével
 
-Bizonyos vezérlők - ilyen a gomb is - támogatják, hogy ezt a kettőt, a Command mintára építve, egy parancs objektum segítségével adhassuk meg. A  Command tervezési minta koncepciójával a "Tervezési minták 3" előadás alapján lehet résztelesebben megismerkedni (bár ott csak az alap Command mintával ismerkedtünk meg, mely a parancs futtatását támogatja, tiltását/engedélyezését nem). A Command minta MVVM specifikus megvalósításával a WinUI előadássorozat vége felé, a "Command minta" című diától kezdve lehet megismerkedni.
+Bizonyos vezérlők - ilyen a gomb is - támogatják, hogy ezt a kettőt, a Command mintára építve, egy parancs objektum segítségével adhassuk meg. A Command tervezési minta koncepciójával a "Tervezési minták 3" előadás alapján lehet részletesebben megismerkedni (bár ott csak az alap Command mintával ismerkedtünk meg, mely a parancs futtatását támogatja, tiltását/engedélyezését nem). A Command minta MVVM specifikus megvalósításával a WinUI előadássorozat vége felé, a "Command minta" című diától kezdve lehet megismerkedni.
 
 Az alapelv a következő: a gombnál a `Click` és `IsEnabled` "megadása" helyett a gomb `Command` tulajdonságát állítjuk egy `ICommand` interfészt megvalósító command objektumra. A futtatás, illetve tiltás/engedélyezés már ezen command objektum feladata.
 
@@ -259,7 +259,7 @@ A következő lépésben a "-" gomb kezelését alakítjuk át command alapúra.
 * Az újonnan bevezetett tulajdonságnak a ViewModel konstruktorban értéket adni. A `RelayCommand` konstruktor paramétereit add meg megfelelően.
 * A `PersonListPage.xaml`-ben a "-" gombnál a `Click` és `IsEnabled` adatkötésére nincs már szükség, ezek törlendők. Helyette a gomb `Command` tulajdonságát kösd a ViewModel-ben az előző lépésben bevezetett `DecreaseAgeCommand` tulajdonsághoz.
 
-Ha kipróbáljuk, a parancs futtatás működik, a tiltás/engedélyezés viszont még nem: ha jól megfigyeljük, a gomb mindig engedélyezett marad megjelenésében. Ennek, kicsit jobban belegondolva, logikus oka van: a `RelayCommand` meg tudja ugyan hívni a második konstruktor paraméterében megadott műveletet az állapot ellenőrzéséhez, de nem tudja, hogy minden `NewPerson.Age` változáskor meg kellene ezt tennie! Ezen tudunk segíteni. A ViewModel-ünk konstruktorában már feliratkoztunk korábban a `NewPerson.PropertyChanged` eseményre: erre építve, amikor változik az életkor (vagy amikor változhat, az nem probléma, ha néha feleslegesen megtesszük) hívd meg a `DecreaseAgeCommand` `NotifyCanExecuteChanged` műveletét. Ennek a műveletnek nagyon beszédes neve van: értesíti a parancsot, hogy megváltoz(hat)ott azon állapot, mely alapján a parancs tiltott/engedélyezett állapota épít. Így a parancs frissíteni fogja magát, pontosabban a parancshoz tartozó gomb állapotát.
+Ha kipróbáljuk, a parancs futtatás működik, a tiltás/engedélyezés viszont még nem: ha jól megfigyeljük, a gomb mindig engedélyezett marad megjelenésében. Ennek, kicsit jobban belegondolva, logikus oka van: a `RelayCommand` meg tudja ugyan hívni a második konstruktor paraméterében megadott műveletet az állapot ellenőrzéséhez, de nem tudja, hogy minden `NewPerson.Age` változáskor meg kellene ezt tennie! Ezen tudunk segíteni. A ViewModel-ünk konstruktorában már feliratkoztunk korábban a `NewPerson.PropertyChanged` eseményre: erre építve, amikor változik az életkor (vagy amikor változhat, az nem probléma, ha néha feleslegesen megtesszük) hívd meg a `DecreaseAgeCommand` `NotifyCanExecuteChanged` műveletét. Ennek a műveletnek nagyon beszédes neve van: értesíti a parancsot, hogy megváltoz(hat)ott azon állapot, mely alapján a parancs tiltott/engedélyezett állapota épül. Így a parancs frissíteni fogja magát, pontosabban a parancshoz tartozó gomb állapotát.
 
 Írd át a "+" gomb kezelését is hasonlóan, parancs alapúra! A "+Add" gomb kezelését ne változtasd meg!
 
