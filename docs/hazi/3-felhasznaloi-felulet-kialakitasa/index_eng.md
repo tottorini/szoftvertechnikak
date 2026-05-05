@@ -279,7 +279,7 @@ Form layout
 
 * Use the `Header` property in `TextBox`, `ComboBox`, and `DatePicker` controls to define their labels instead of adding separate `TextBlock` elements.
 * Ensure sufficient spacing between form elements. It should be about 15 pixels (use the `StackPanel` `Spacing` property for easy control).
-* Add a visible border to the form: This is not for styling but to clearly show where the form is placed (alternatively, a background color change could be used).. Set `BorderThickness="1"` and `BorderBrush="LightGray"` for clear visibility.
+* Add a visible border to the form: This is not for styling but to clearly show where the form is placed (alternatively, a background color change could be used). Set `BorderThickness="1"` and `BorderBrush="LightGray"` for clear visibility.
 * Apply margins: Left, right, and bottom margins should be 8 px. Top margin should be 0 px. This ensures consistent spacing between the form and its container, even when the window is resized.
 * Maintain spacing inside the form: Add 15 px padding at the top and bottom. Add 10 px padding on the left and right. Instead of setting margins individually for each control, adjust the container’s **padding** to maintain spacing between the form’s border and its contents.
 * Ensure the form and textboxes resize with the window, as illustrated below:
