@@ -83,7 +83,7 @@ Another option is using the command line. Navigate to the folder where you want 
 
 `git clone <repo url>`
 
-where `<repo url>` is your repository's URL (copied from the browser, e.g., `https://github.com/bmeviauab00/hazi1-2024-myusername`). After running the command, the repository will be cloned into a folder named after the repository.
+where `<repo url>` is your repository's URL (copied from the browser, e.g., `https://github.com/bmeviauab00/hazi1-2026-myusername`). After running the command, the repository will be cloned into a folder named after the repository.
 
 !!! note "Command-line Git"
     Don't be afraid to use Git in the command line—cloning a repository this way is actually the simplest method.
