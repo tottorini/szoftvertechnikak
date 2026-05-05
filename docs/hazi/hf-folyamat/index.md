@@ -76,7 +76,7 @@ Ebből jól látható, hogy egy Git repository nem más, mint mappák és fájlo
 
 Alternatív lehetőség a parancssor használata. Parancssorban navigáljunk abba a mappába, ahová a forráskódot ki szeretnénk clone-ozni, és itt adjuk ki a következő parancsot:
 `git clone <repo url>`
-, ahol a `<repo url>` a repositorynk címe (pl. böngésző címsávjából bemásolva, ehhez hasonló: <https://github.com/bmeviauab00/hazi1-2024-myusername>). A parancs lefutása után egy a repository nevének megfelelő alkönyvtárban találjuk az új helyi repónkat.
+, ahol a `<repo url>` a repositorynk címe (pl. böngésző címsávjából bemásolva, ehhez hasonló: <https://github.com/bmeviauab00/hazi1-2026-myusername>). A parancs lefutása után egy a repository nevének megfelelő alkönyvtárban találjuk az új helyi repónkat.
 
 !!! note "Parancssori git"
     Ne féljünk a parancssori git-et használni, egy repository clone-ozásának tulajdonképpen ez a legegyszerűbb módja.
