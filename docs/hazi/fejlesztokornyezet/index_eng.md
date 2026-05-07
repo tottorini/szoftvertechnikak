@@ -8,7 +8,7 @@ During the semester, **Visual Studio 2026** must be used to complete the homewor
 ??? note "Why do we need Visual Studio and Windows?"
     VS Code or JetBrains Rider are not usable due to the following reasons:
 
-    - They do not support UML (similar) modeling, that is required for the first homework task.
+    - They do not support UML (similar) modeling, which is required for the first homework task.
     - They do not properly support the development of .NET applications with a *WinUI3* user interface (starting from the 3rd homework task, certain tasks will build on this feature).
     - The lab materials and homework tasks are written for a supported development environment, so we use the same familiar environment both in labs and at home.
 
@@ -16,7 +16,7 @@ During the semester, **Visual Studio 2026** must be used to complete the homewor
 
 There are several editions of Visual Studio:
 
-- For the course, the free *Community* edition is sufficient, that can be downloaded from the Microsoft website.
+- For the course, the free *Community* edition is sufficient, which can be downloaded from the Microsoft website.
 - Of course, the *Professional* and *Enterprise* editions can also be used, but they do not provide significant additional benefits for the course. These paid versions are available for free to university students (through the Azure Dev Tools for Teaching program on <https://azureforeducation.microsoft.com/devtools>).
 
 ### Components to be Installed
