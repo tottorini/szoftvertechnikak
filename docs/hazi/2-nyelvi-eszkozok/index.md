@@ -21,7 +21,7 @@ Az önálló gyakorlat célja:
 A szükséges fejlesztőkörnyezetről [itt](../fejlesztokornyezet/index.md) található leírás.
 
 !!! warning "C# 12-es (és újabb) nyelvi elemek használata" 
-    A házi feladat megoldása során C# 12-es, és annál újabb nyelvi elemek, (pl. primary constructor) nem használhatók, ugyanis a GitHub-on futó ellenőrző ezeket még nem támogatja.
+    A házi feladat megoldása során C# 12-es, és annál újabb nyelvi elemek (pl. primary constructor) nem használhatók, ugyanis a GitHub-on futó ellenőrző ezeket még nem támogatja.
 
 ## Beadás menete, előellenőrző
 
@@ -47,7 +47,7 @@ A validáció során a lehető legegyszerűbb, legletisztultabb megoldást vála
 ### Megoldás
 
 A feladat megoldása a [2. labor 1. feladatával](../../labor/2-nyelvi-eszkozok/index.md#1-feladat-tulajdonsag-property) analóg módon készíthető el.
-A `MidiChlorianCount` tulajdonság setterében érvénytelen érték esetén dobj kivételt. Ezt például a következő utasítással tehető meg:
+A `MidiChlorianCount` tulajdonság setterében érvénytelen érték esetén dobj kivételt. Ez például a következő utasítással tehető meg:
 
 ```csharp
 throw new ArgumentException("You are not a true jedi!");
@@ -393,7 +393,7 @@ Employees
 Footer
 ```
 
-Az első sorban "----" felett található a fejléc. Alatta az egye személyekhez egy-egy "Person" beégetett szöveg, majd a "----" alatt a lábléc, egyelőre csak egy beégetett "Footer" szöveggel.
+Az első sorban "----" felett található a fejléc. Alatta az egyes személyekhez egy-egy "Person" beégetett szöveg, majd a "----" alatt a lábléc, egyelőre csak egy beégetett "Footer" szöveggel.
 
 A megoldásban látható, hogy a fejléc szövege a `ReportPrinter` osztályba nincs beégetve. Ezt `ReportPrinter` felhasználója adja meg konstruktor paraméterben egy delegate, esetünkben egy lambda kifejezés formájában. A delegate típusa a .NET beépített `Action` típusa.
 

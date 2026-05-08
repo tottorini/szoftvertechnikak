@@ -2,7 +2,7 @@
 
 ## Bevezetés
 
-A félév során a házi feladatok megoldásához a **Visual Studio 2026** fejlesztőkörnyezetet kell használni. Ennek futtatásához Windows operációs rendszerre van szükség. Ha telepítve van már a gépünkre a Visual Studio 2026, akkor a Start menüből indítsuk el a „Visual Studio Installer”-t. Ez induláskor ellenőrzi, érhető-e el Visual Studio-ból újabb változat online, és ha igen, az Update gombra kattintva indítsuk is el a legfrissebb verzió telepítését.
+A félév során a házi feladatok megoldásához a **Visual Studio 2026** fejlesztőkörnyezetet kell használni. Ennek futtatásához Windows operációs rendszerre van szükség. Ha telepítve van már a gépünkre a Visual Studio 2026, akkor a Start menüből indítsuk el a „Visual Studio Installer”-t. Ez induláskor ellenőrzi, hogy elérhető-e a Visual Studio-ból újabb változat online, és ha igen, az Update gombra kattintva indítsuk is el a legfrissebb verzió telepítését.
 
 ??? note  "Miért is van szükség Visual Studiora és Windowsra?"
     VS Code, vagy pl. a JetBrains Rider a következők miatt nem használhatók:
@@ -20,7 +20,7 @@ A Visual Studionak több kiadása létezik:
 
 ### Telepítendő komponensek
 
-A tárgy első előadása röviden kitér a .NET különböző változataira (.NET Framework 4.x, .NET 5+ (korábban .NET Core) és  stb.). A feladatok megoldásához a .NET 10-et használjuk a félév során. A Visual Studio ezt telepíti, de szükség van a ".NET desktop development" Visual Studio Workload telepítésére:
+A tárgy első előadása röviden kitér a .NET különböző változataira (.NET Framework 4.x, .NET 5+ (korábban .NET Core) stb.). A feladatok megoldásához a .NET 10-et használjuk a félév során. A Visual Studio ezt telepíti, de szükség van a ".NET desktop development" Visual Studio Workload telepítésére:
 
 1. Visual Studio telepítő indítása (pl. a Windows Start menüben a „Visual Studio Installer” begépelésével).
 2. Modify gombra kattintás
@@ -49,14 +49,14 @@ XAML/WinUI technológiákhoz kapcsolódó feladatok esetén (3. házi feladattó
 
 3. Windows App SDK telepítése
 
-    A félév során laborokon és a házikban az "1.8.4 (1.8.260101001)" verziót használjuk, érdemes ezt telepíteni akkor is, ha újabb verzió jönne ki, mely innen érhető el: <https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads>. Régebbi verziók itt elérhetőek, ha az újabbak között korábban nem szereplne: <https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/older-downloads>. Egy modern gépre az x64-es verziót kell telepíteni.
+    A félév során laborokon és a házikban az "1.8.4 (1.8.260101001)" verziót használjuk, érdemes ezt telepíteni akkor is, ha újabb verzió jönne ki, mely innen érhető el: <https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads>. Régebbi verziók itt elérhetőek, ha az újabbak között korábban nem szerepelne: <https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/older-downloads>. Egy modern gépre az x64-es verziót kell telepíteni.
 
-4. Ha a fentiek telepítése után Windows 11-en nem akarna működni, akkor fel kell tenni a Visual Studio telepítőben a Windows 10 SDK-ból a 10.0.19041-et, vagy újabbat (az Idividual Components alatt található)
+4. Ha a fentiek telepítése után Windows 11-en nem akarna működni, akkor fel kell tenni a Visual Studio telepítőben a Windows 10 SDK-ból a 10.0.19041-et, vagy újabbat (az Individual Components alatt található)
 
 #### Adatbázis támogatás
 
 Ez csak azoknak szól, akik laboron saját gépen dolgoznak: a 7. Adatkezelés laborhoz a Visual Studio telepítőjében szükség van az "SQL Server Data Tools" komponens telepítésére az "Individual Components" oldalon.
 
-### MacBook és Linux használók számára információk
+### MacBook és Linux felhasználók számára információk
 
-A tárgy felelős oktatójától (Benedek Zoltán) BME Cloud hozzáférés igénylelhető e-mailben.
+A tárgy felelős oktatójától (Benedek Zoltán) BME Cloud hozzáférés igényelhető e-mailben.

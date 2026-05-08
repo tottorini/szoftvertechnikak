@@ -13,11 +13,11 @@ A Git alapú munkafolyamat legfontosabb lépései - némi egyszerűsítéssel - 
 1. A fejlesztő klónozza (`clone`) az adott központi repository-t, melynek során egy azzal megegyező helyi repository jön létre a saját számítógépén. Ezt a műveletet elég egyszer elvégezni.
 2. A fejlesztő a helyi repository-hoz tartozó munkakönyvtárban (working directory) változtatásokat végez a kódon: új fájlokat vesz fel, meglévőket módosít és töröl.
 3. Ha elkészül egy érdemi részfeladat, akkor a fejlesztő a változtatásokat `commit`-olja a számítógépén levő helyi repository-ba. Ennek során a commit-ot célszerű egy a változtatások jellegét jól összefoglaló megjegyzéssel ellátni.
-4. A helyi repository-ból egy `push` művelettel a fejlesztő felölti a változásokat a központi repository-ba, ahol így változtatásai mások számára is láthatóvá válnak.
+4. A helyi repository-ból egy `push` művelettel a fejlesztő feltölti a változásokat a központi repository-ba, ahol így változtatásai mások számára is láthatóvá válnak.
 
 Minden egyes **commit** tulajdonképpen egy időbélyeggel, a fejlesztő felhasználónevével és e-mail címével ellátott kódot érintő változáshalmaz. A repositoryban ezek "egymásutániságából" áll össze a teljes verziótörténet.
 Mivel a legtöbb esetben a fejlesztők csapatban dolgoznak, időnként szükség van arra, hogy mások által a központi repository-ba `push`-olt változtatásokat a fejlesztők a saját lokális repository-jukba letöltsék és belemerge-eljék: erre szolgál a `pull` művelet. Fontos szabály, hogy `push`-olni csak akkor lehet a központi repository-ba (a Git csak akkor engedi), ha előtte mások változtatásait a saját lokális repository-nkba egy `pull` művelettel előtte belemerge-eltük.
-A Szoftvertechnikák tárgy keretében a `pull` műveletet nem kell használni, mert mindenki önállóan, saját repository-ba dolgozik. Megjegyzés: ha esetleg a GitHub felületén közvetlen változtatunk fájlokon (vagy több clone-ban is dolgozunk), akkor szükség van a `pull` használatára ez esetben is.
+A Szoftvertechnikák tárgy keretében a `pull` műveletet nem kell használni, mert mindenki önállóan, saját repository-ba dolgozik. Megjegyzés: ha esetleg a GitHub felületén közvetlenül változtatunk fájlokon (vagy több clone-ban is dolgozunk), akkor szükség van a `pull` használatára ez esetben is.
 A fentieken túlmenően a Git számos további szolgáltatást biztosít (pl. teljes verziótörténet megtekintése minden fájlra, commit történet megtekintése, tetszőleges múltbeli verzióra visszaállás, ágak kezelése stb.).
 
 ## GitHub
@@ -39,7 +39,7 @@ A Git egy elosztott verziókezelő rendszer. Ahhoz, hogy a saját gépünkön do
 - A Git önmagában is telepíthető, és parancssorból is ki tudjuk adni a szükséges `clone`, `commit`, `push` stb. parancsokat.
 - Használhatunk a parancsok kiadására egy grafikus felülettel rendelkező eszközt. Ilyenek pl. a GitHub Desktop, a GitExtensions, vagy maga a Visual Studio is (mely integrált grafikus Git szolgáltatásokat is biztosít).
 
-A két megközelítést a mindennapokban kombináltan szoktuk használni. Egy repo leklónozása sokszor parancssorból a legegyszerűbb/leggyorsabb. A változások commit-olására, a központi repositoryval való szinkronizációra (push, pull), a verziótörtének megjelenítésére már célszerűbb egy grafikus eszközt használni, különösen akkor, ha még kevésbé vagyunk rutinosak. A tárgy keretében a klónozásra a parancssor vagy a Visual Studio, az egyéb parancsok kiadására a Visual Studio javasolt. A git használatról (a házi feladatok kontextusában) [itt](../hf-folyamat/index.md) található bővebb leírás.
+A két megközelítést a mindennapokban kombináltan szoktuk használni. Egy repo leklónozása sokszor parancssorból a legegyszerűbb/leggyorsabb. A változások commit-olására, a központi repositoryval való szinkronizációra (push, pull), a verziótörténet megjelenítésére már célszerűbb egy grafikus eszközt használni, különösen akkor, ha még kevésbé vagyunk rutinosak. A tárgy keretében a klónozásra a parancssor vagy a Visual Studio, az egyéb parancsok kiadására a Visual Studio javasolt. A git használatról (a házi feladatok kontextusában) [itt](../hf-folyamat/index.md) található bővebb leírás.
 
 ## Git telepítése
 

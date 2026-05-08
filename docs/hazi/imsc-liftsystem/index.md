@@ -26,7 +26,7 @@ Készíts egy `Lift` osztályt, mely egy emeletes ház felvonóját reprezentál
 * `Floor` tulajdonság: Aktuális emelet. Egész érték.
 * `TargetFloor` tulajdonság: Cél emelet. Egész érték.
 * `Stairway` tulajdonság: Lépcsőház száma, melyben a lift található. Egész érték. Egy lépcsőházban egy lift lehet (ezt nem kell validálni az alkalmazásban, de mindig így használjuk).
-* `Call` művelet: A lift hívására szolgál, beállítja a célemeletet a paraméterben magadott értékre.
+* `Call` művelet: A lift hívására szolgál, beállítja a célemeletet a paraméterben megadott értékre.
 * `Step` művelet: A lift egy emelettel történő léptetésére szolgál (amennyiben az aktuális és célemelet nem egyezik: ha egyezik, nem csinál semmit). Véletlenszerű esetben - átlagosan kb. minden 5. lépés során - a lift ideiglenesen beragad: ez azt jelenti, hogy az adott lépés során nem vált emeletet a célemelet irányába.
 
 Készíts egy `LiftDoor` osztályt, mely egy liftajtót reprezentál:
@@ -46,7 +46,7 @@ Készíts egy `LiftDoor` osztályt, mely egy liftajtót reprezentál:
 * A jövőben a továbbfejlesztés során lehetnek más `Subject` osztályok is, ezért be kell vezetni egy `Subject` ősosztályt a kódduplikáció elkerülésére (de a házi feladatban csak egy subject lesz).
 * :exclamation: A megoldás NEM építhet .NET event-ekre (ugyanezen osztályokkal/interfészekkel pl. Java nyelven is megvalósíthatónak kell lennie).
 
-A liftrendszer konfiguráció összeállításért és a szimuláció futtatásáért egy `LiftSystemModel` osztály legyen a felelős. Ennek forráskódját alább megadjuk, ebből kell egy példányt a `Main` függvényben létrehozni, és a `Run` függvényét meghívni:
+A liftrendszer konfiguráció összeállításáért és a szimuláció futtatásáért egy `LiftSystemModel` osztály legyen a felelős. Ennek forráskódját alább megadjuk, ebből kell egy példányt a `Main` függvényben létrehozni, és a `Run` függvényét meghívni:
 
 ```csharp
 class LiftSystemModel
@@ -125,7 +125,7 @@ A megoldás illusztrálása:
 
 ## 3. feladat - Meglévő LiftMonitor osztály beillesztése
 
-A feladat a liftek működési státuszáról információ megjelenítése. Emlékezzünk: a liftek véletlenszerű időközönként elakadnak, mint ahogy a korábbi leírásban szerepelt! Minden időpillanatban tudni szeretnénk, hogy egy lift működik (státusza "OK"), vagy el van akadva (státusza "stuck").  Ehhez rendelkezésre is áll az alábbi osztály:
+A feladat a liftek működési státuszáról információ megjelenítése. Emlékezzünk: a liftek véletlenszerű időközönként elakadnak, mint ahogy a korábbi leírásban szerepelt! Minden időpillanatban tudni szeretnénk, hogy egy lift működik (státusza "OK"), vagy el van akadva (státusza "stuck"). Ehhez rendelkezésre is áll az alábbi osztály:
 
 ```csharp
 class LiftMonitor

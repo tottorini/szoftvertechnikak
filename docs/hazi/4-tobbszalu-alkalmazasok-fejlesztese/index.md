@@ -44,7 +44,7 @@ A kiinduló keret már tartalmaz némi alkalmazás és megjelenítéshez kapcsol
     - `Start Race`: A verseny indítása, mely hatására a biciklik egymással versenyezve elérnek a depóba, és ott várakoznak.
     - `Start Next Bike From Depo`: A depóban várakozó biciklik közül elindít egyet (mely bicikli egészen a célvonalig halad). A gombon többször is lehet kattintani, minden alkalommal egy biciklit enged tovább.
 
-Az alábbi animált képen azt illusztrálja, hogy a megoldás során hova szeretnénk eljutni:
+Az alábbi animált kép azt illusztrálja, hogy a megoldás során hova szeretnénk eljutni:
 
 ![Kiinduló UI](images/app-ui-anim.gif)
 
@@ -96,7 +96,7 @@ Jelen pillanatban hiába módosítanánk futás közben a játék állapotát: a
 Az első probléma: a `MainWindow.xaml`-be be van égetve a három, biciklit megjelenítő `TextBlock`. Így a felületünk csak olyan játék megjelenítésére lenne képes, melyben pontosan három versenyző szerepel. Készítsük elő a megjelenítést tetszőleges számú bicikli kezelésére.
 Első lépésben távolítsuk el a `MainWindow.xaml`-ből a három biciklihez tartozó "beégetett" `TextBlock` definíciót (kommentezzük ki a három sort). Ezt követően, a code behind fájlban, a `PrepareRaceButton_Click` eseménykezelőben a verseny előkészítése (`game.PrepareRace()` hívás) után:
 
-1. Dinamikusan hozzunk létre minden, a `game` objektumban szereplő biciklihez (`game.Bikes` tulajdonság!) egy megfelelő `TextBlock` objektumot . A létrehozott `TextBlock` tulajdonságai pontosan feleljenek meg annak, mint amit a xaml fájlban kiiktattunk (`FontFamily`, `FontSize`, `Margin`, `Text`)
+1. Dinamikusan hozzunk létre minden, a `game` objektumban szereplő biciklihez (`game.Bikes` tulajdonság!) egy megfelelő `TextBlock` objektumot. A létrehozott `TextBlock` tulajdonságai pontosan feleljenek meg annak, mint amit a xaml fájlban kiiktattunk (`FontFamily`, `FontSize`, `Margin`, `Text`)
 2. A létrehozott `TextBlock` objektumokat fel kell venni a `bikesPanel` nevű `StackPanel` gyerekei közé (a xaml fájlban kikommentezett `TextBlock`-ok is ennek gyerekei voltak, ezt nézzük meg!), mégpedig a `bikesPanel.Children.Add` hívásával.
 3. A létrehozott `TextBlock` objektumokat vegyük fel a `bikeTextBlocks` listába is. Ez azért fontos - nézzük is meg a kódban - mert az `UpdateUI` felületfrissítő függvény a biciklikhez tartozó `TextBlock`-okat a `bikeTextBlocks` listában keresi (tömbindex alapján párosítja a bicikliket és a `TextBlock`-okat).
 
@@ -129,7 +129,7 @@ Most már pontosan annyi `TextBlock`-unk lesz, ahány bicikli van a `game` objek
 - a) Mindig, amikor a `Game` állapota megváltozik.
 - b) Adott időközönként (pl. 100 ms-ként) "folyamatosan", egy időzítő segítségével.
 
-Általánosságában mindkét megoldásnak lehetnek előnyei és hátrányai. A b) bizonyos tekintetben egyszerűbb (nem kell tudni, mikor változik a `Game` állapota), ugyanakkor felesleges frissítés is történhet (ha nem változott az állapot két frissítés között). De hatékonyabb is lehet, ha az állapot nagyon gyakran változik, és nem akarjuk minden változáskor a felületet frissíteni, elég adott időközönként egyszer (pl. a szemünk úgysem tudja lekövetni).
+Általánosságban mindkét megoldásnak lehetnek előnyei és hátrányai. A b) bizonyos tekintetben egyszerűbb (nem kell tudni, mikor változik a `Game` állapota), ugyanakkor felesleges frissítés is történhet (ha nem változott az állapot két frissítés között). De hatékonyabb is lehet, ha az állapot nagyon gyakran változik, és nem akarjuk minden változáskor a felületet frissíteni, elég adott időközönként egyszer (pl. a szemünk úgysem tudja lekövetni).
 Esetünkben - elsősorban egyszerűsége miatt - a "b)", vagyis időzítő alapú megoldást választjuk.
 
 WinUI 3 környezetben periodikus események kezelésére a `DispatcherTimer` osztály alkalmazása javasolt (különösen, ha a felületelemekhez is hozzá kívánunk férni az időzített műveletben).
@@ -249,7 +249,7 @@ Ezekhez a lépésekhez még adunk megoldást (de sokkal többet tanulsz belőle,
     - Indítsd el az alkalmazást. Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,
     - a „háttérben” a Visual Studio legyen, a `Game.cs` megnyitva,
     - VS-ben zoomolj úgy, hogy a `Game` osztály `CreateBike` és `BikeThreadFunction` függvénye látható legyen, az előtérben pedig az alkalmazásod ablaka.
-    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl.ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
+    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl. ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
 
 ## Feladat 3 – A verseny indítása
 
@@ -273,7 +273,7 @@ Valósítsd meg a verseny indítását a rajtvonalról és futtatását mindaddi
     - Indítsd el az alkalmazást. Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,
     - a „háttérben” a Visual Studio legyen, a `Game.cs` megnyitva,
     - VS-ben zoomolj úgy, hogy a `Game` osztály `BikeThreadFunction` függvénye látható legyen, az előtérben pedig az alkalmazásod ablaka.
-    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl.ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
+    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl. ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
 
 ## Feladat 4 – A versenyzők indítása a depóból
 
@@ -297,7 +297,7 @@ Valósítsd meg a versenyzők indítását a depóból és futtatását mindaddi
     - Indítsd el az alkalmazást. Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,
     - a „háttérben” a Visual Studio legyen, a `Game.cs` megnyitva,
     - VS-ben zoomolj úgy, hogy a `Game` osztály `BikeThreadFunction` függvénye látható legyen, az előtérben pedig az alkalmazásod ablaka.
-    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl.ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
+    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl. ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
 
 ## Feladat 5 – Győztes bicikli megvalósítása
 
@@ -324,7 +324,7 @@ private void UpdateUI()
 }
 ```
 
-A logikát ezt követően önállóan valósítsd meg, az alábbi irányleveknek és tippeknek megfelelően.
+A logikát ezt követően önállóan valósítsd meg, az alábbi irányelveknek és tippeknek megfelelően.
 
 !!! tip "Irányelvek és tippek a megoldáshoz"
 
@@ -341,18 +341,18 @@ A logikát ezt követően önállóan valósítsd meg, az alábbi irányleveknek
     - Indítsd el az alkalmazást. Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,
     - a „háttérben” a Visual Studio legyen, a `Game.cs` megnyitva,
     - VS-ben zoomolj úgy, hogy a `Game` osztály `BikeThreadFunction` függvénye látható legyen, az előtérben pedig az alkalmazásod ablaka.
-    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl.ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
+    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl. ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
 
 ## Feladat 6 – Kölcsönös kizárás, valamint volatile
 
-Az előző feladatban láttuk, hogy a hasWinner lekérdezését és beállítását "oszthatatlanná", "atomivá" kellett tegyük, vagyis ennek során meg kellett valósítsuk a kölcsönös kizárást. Kérdés, van-e esetleg már olyan más logika is az alkalmazásban, ahol ezt meg kellet volna tenni a konzisztencia garantálásának érdekében. Ehhez azt kell megvizsgáljuk, melyek azok a változók, melyeket több szálból is írunk (vagy egyikből írunk és másikból olvasunk). A következők érintettek:
+Az előző feladatban láttuk, hogy a hasWinner lekérdezését és beállítását "oszthatatlanná", "atomivá" kellett tegyük, vagyis ennek során meg kellett valósítsuk a kölcsönös kizárást. Kérdés, van-e esetleg már olyan más logika is az alkalmazásban, ahol ezt meg kellett volna tenni a konzisztencia garantálásának érdekében. Ehhez azt kell megvizsgáljuk, melyek azok a változók, melyeket több szálból is írunk (vagy egyikből írunk és másikból olvasunk). A következők érintettek:
 
 - `Bike` osztály `position` tagja. Ezt a biciklik szálfüggvénye módosítja a `+=` operátorral, a főszál pedig olvassa a `Position` property segítségével a megjelenítés során. Kérdés, lehet-e ebből bármiféle inkonzisztencia (mert ha igen, akkor meg kellene valósítani a kölcsönös kizárást, pl. a `lock` utasítás segítségével). Ez mélyebb átgondolást igényel. Az `int` típusú változók olvasása és írása (sima `=` operátor) atomi, így ez rendben is volna. Csakhogy itt módosításra nem az `=`, hanem `+=` operátort használjuk. A `+=` operátor nem atomi, több lépésből áll: változó kiolvasása, növelése, majd visszaírása (ha nem tiszta, pontosan miért és milyen probléma léphet fel, mindenképpen nézd át a kapcsolódó előadás diát). Így, ha több szál is használja "egyszerre" a `+=` operátort ugyanazon a változón, akkor abból inkonzisztencia lehet. De ne kapkodjunk, gondoljunk bele jobban: a mi esetünkben egyszerre egy szál hív `+=`-t, a másik szálunk csak olvassa a `position` értékét. Ebből nem lehet inkonzisztencia, mert egyszerűen csak arról van szó, hogy az olvasás előtt vagy a növelés előtti értéket, vagy az utáni értéket kapja meg az olvasó szál (ha szinte pont egyszerre olvas a += operátor-t végrehajtó másik szállal). Így kijelenthetjük, ennek kapcsán nincs szükség kölcsönös kizárás megvalósítására.
 - `Bike` osztály `isWinner` tagja. Ezt a biciklik szálfüggvénye módosítja a `SetAsWinner` hívásával, a főszál pedig olvassa az `IsWinner` property segítségével a megjelenítés során. Típusa `bool`, melynek írása és olvasása atomi, így nincs szükség kölcsönös kizárás megvalósítására.
 - `Game` osztály `hasWinner` tagja. Típusa bool, melynek írása és olvasása atomi, így amiatt nincs szükség kölcsönös kizárás megvalósítására. De volt egy plusz feltételünk: csak egy győztes lehet versenyben, emiatt mégis szükség volt kölcsönös kizárás megvalósítására (ezt az előző feladatban meg is tettük).
 
 Azt is mondhatnánk, hogy a fenti három változó tekintetében akkor minden rendben is van, de ez nincs így. **Amikor a változók értékét az egyik szál módosítja, előfordulhat, hogy a változók értékét a rendszer cache-eli (pl. regiszterben), így a másik szál a változtatás után is a korábbi értéket látja**. Ennek megakadályozására ezeket a változókat volatile-nak kell definiálni a `volatile` kulcsszóval, mely a változó megváltoztatása után garantálja, hogy annak kiírása megtörténik a memóriába, és a másik szál friss értéket olvas (a `volatile` működése ennél valamivel összetettebb, előadáson bővebben kifejtésre kerül).
-Fontos megjegyzés: a `volatile` alkalmazására nincs szükség, ha az adott változót `lock` blokkból írjuk és olvassuk, vagy az `Interlocked` osztály segítségével módosítjuk. Amiatt csak a `position` és az `isWinner` esetében vezessük be:
+Fontos megjegyzés: a `volatile` alkalmazására nincs szükség, ha az adott változót `lock` blokkból írjuk és olvassuk, vagy az `Interlocked` osztály segítségével módosítjuk. Emiatt csak a `position` és az `isWinner` esetében vezessük be:
 
 ```csharp
 class Bike
@@ -451,7 +451,7 @@ Feladat: módosítsd úgy a `MainWindow.UpdateBikeUI` függvényt, hogy a `Dispa
     - Indítsd el az alkalmazást. Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,
     - a „háttérben” a Visual Studio legyen, a `MainWindow.xaml.cs` megnyitva,
     - VS-ben zoomolj úgy, hogy a `MainWindow` osztály `UpdateBikeUI` függvénye látható legyen, az előtérben pedig az alkalmazásod ablaka.
-    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl.ezek ne: VS Solution Explorer, debuggolást segítő panelek, vagy akár a Windows tálca/taskbar).
+    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl. ezek ne: VS Solution Explorer, debuggolást segítő panelek, vagy akár a Windows tálca/taskbar).
 
 !!! warning "Hasonló játék megvalósítása a gyakorlatban"
     Lényeges, hogy egy hasonló "játék" megvalósítására nem szoktunk szálakat indítani: a biciklik léptetésére egy timer sokkal praktikusabb lenne, mert az egész játék egyszálú maradhatna, és elkerülhetnénk számos, a többszálúságból adódó nehézséget (jelen feladat keretében a célunk értelemszerűen pont a többszálúság témakörének gyakorlása volt).
@@ -474,11 +474,11 @@ A következőkben megadjuk a feladat megoldásának néhány fontos elemét:
 
 - Tegyél fel egy *Stop Race* gombot a felületre, készíts hozzá kezelőfüggvényt, és ebből meg kell hívni az újonnan bevezetendő `Game.StopRace` függvényt.
 - A megállításhoz szükség lesz egy jelzésre a bicikliket futtató szál felé. Ez legyen egy `bool` típusú változó, amelyet a bicikliket futtató szál ciklusa figyel. Vedd fel ezt `raceEnded` néven, és módosítsd a szálfüggvényt, hogy ha ennek értéke igaz lesz, a szál fejezze be a futását (térjen vissza).
-- Az előbb bevezetett bool változó önmagában nem lesz elég. Hiszen, amikor a bicikli a startvonalnál vagy a depóban vár, akkor a szála blokkolt állapotban van (esemény jelzésre vár), ekkor nem tudja a `raceEnded`bool változót vizsgálni. Emiatt be kell vezetni fel egy új `ManualResetEvent` típusú változót, amely a leállítás eseményt fogja jelezni (és várakozni is lehet rá).
+- Az előbb bevezetett bool változó önmagában nem lesz elég. Hiszen, amikor a bicikli a startvonalnál vagy a depóban vár, akkor a szála blokkolt állapotban van (esemény jelzésre vár), ekkor nem tudja a `raceEnded` bool változót vizsgálni. Emiatt be kell vezetni egy új `ManualResetEvent` típusú változót, amely a leállítás eseményt fogja jelezni (és várakozni is lehet rá).
 - Ezt az eseményt a `bool` változóval együtt a *Stop Race* gombra való kattintás során kell jelzettbe állítani (a `Game.StopRace`-ben).
 - A bicikliket mozgató szálfüggvényben kommentezd ki (ne töröld!) az eddigi várakozást megvalósító kódrészeket, és készíts egy új megoldást az előbb felvett leállítást jelző `ManualResetEvent` segítségével. A várakozásokra továbbra is szükség lesz, azonban a várakozó állapotból akkor is ki kell lépni, ha a leállítást jelző `ManualResetEvent` esemény lesz jelzett.
 - Ha leállítás történt, a szál futását be kell fejezni (a szálfüggvényből ki kell lépni, pl. egy `return` utasítással).
-- A `Game.StopRace` műveletében a szálaknak történő jelzés után meg kell várni, míg a szálak valóban ki is lépnek. Ehhez az egyes biciklikhez tartozó szál objektumokra kell sorban `Join()`-t hívni. Ahhoz, hogy ez megtehető legyen, a szálak indításakor a szál objektumokat el kell tárolni egy tagváltozóban (pl. egy `List<Thread>` -ben)
+- A `Game.StopRace` műveletében a szálaknak történő jelzés után meg kell várni, míg a szálak valóban ki is lépnek. Ehhez az egyes biciklikhez tartozó szál objektumokra kell sorban `Join()`-t hívni. Ahhoz, hogy ez megtehető legyen, a szálak indításakor a szál objektumokat el kell tárolni egy tagváltozóban (pl. egy `List<Thread>`-ben)
 
 Megjegyzés: szálak kiléptetésére alternatív megoldás lett volna a bool és `ManualResetEvent` bevezetése helyett a szálakra `Interrupt` művelet hívása, és a szálfüggvényekben az ennek hatására kiváltódó `ThreadInterruptedException` elkapása. Ez a témakör előadáson került ismertetésre.
 
@@ -487,5 +487,5 @@ Megjegyzés: szálak kiléptetésére alternatív megoldás lett volna a bool é
 
     - Indítsd el az alkalmazást. Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,
     - a „háttérben” a Visual Studio legyen, a `Game.cs` megnyitva,
-    - VS-ben zoomolj úgy, hogy a `Game` osztály szálfüggvénye függvénye látható legyen, az előtérben pedig az alkalmazásod ablaka.
-    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl.ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).
+    - VS-ben zoomolj úgy, hogy a `Game` osztály szálfüggvénye látható legyen, az előtérben pedig az alkalmazásod ablaka.
+    - A vágást úgy készítsd, hogy képernyőmentésen a releváns részek legyenek csak (pl. ezek ne: VS Solution Explorer, debuggolást segítő alsó és oldalsó panelek, vagy akár a Windows tálca/taskbar).

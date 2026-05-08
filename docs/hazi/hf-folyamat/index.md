@@ -11,7 +11,7 @@ Az egyes házi feladatok kiinduló keretét GitHub/GitHub Classroom segítségé
 3. A feladathoz tartozó linket nyisd meg. Ez minden feladathoz más lesz, Moodle-ben kerülnek meghirdetésre fokozatosan a félév folyamán. A formátuma a következőhöz hasonló: <https://classroom.github.com/abcdefgh>. Ha a hivatkozásra kattintva hibát kapsz ("There was a problem authenticating with GitHub, please try again."), copy-paste-tel másold be közvetlenül a böngésző címsorába a címet.
 4. Ha kéri, adj engedélyt a GitHub Classroom alkalmazásnak, hogy használja az account adataidat.
 5. Látni fogsz egy oldalt, ahol elfogadhatod a feladatot ("Accept this assignment"). Kattints a gombra.
-6. Várd meg, amíg elkészül a repository. A GitHub nem mindig frissíti az oldalt magától, célszerű az oldal időnkénti kézi frissítésével próbálkozni (pl. F5 billentyű). Ha elkészült a repository, az oldal kiírja az új repository url-jét, amin kattintva a repository-ra lehet navigálni (ehhez hasonló: <https://github.com/bmeviauab00/hazi1-2024-username>).  De nem is feltétlen szükséges az url elmentése, a GitHub nyitóoldalán (<https://github.com/>) baloldalt a saját repository-k közt bármikor meg lehet később is találni.
+6. Várd meg, amíg elkészül a repository. A GitHub nem mindig frissíti az oldalt magától, célszerű az oldal időnkénti kézi frissítésével próbálkozni (pl. F5 billentyű). Ha elkészült a repository, az oldal kiírja az új repository url-jét, amin kattintva a repository-ra lehet navigálni (ehhez hasonló: <https://github.com/bmeviauab00/hazi1-2026-username>). De nem is feltétlen szükséges az url elmentése, a GitHub nyitóoldalán (<https://github.com/>) baloldalt a saját repository-k közt bármikor meg lehet később is találni.
 7. Klónozd le a repository-t (ennek mikéntjére rövidesen visszatérünk). Ebben találni fogsz egy keretet, vagy kiinduló kódot. Ezen dolgozz, ezt változtasd. Az alapértelmezett git ágon/branchen dolgozz (ha ez nem mond semmit, nem baj: ez csak azoknak szól, akik a git használatában jártasak és több ágon szoktak dolgozni).
 8. :exclamation: A kiinduló projektben van egy .github/workflows mappa, ennek tartalmát tilos megváltoztatni, törölni stb.
 9. :exclamation: A munka során a kiindulási repóban levő solutionben/projektben kell dolgozni, új projektet/solutiont ne hozz létre.
@@ -19,7 +19,7 @@ Az egyes házi feladatok kiinduló keretét GitHub/GitHub Classroom segítségé
 11. Oldd meg a feladatot. Pushold a határidőig. Az alapértelmezett "Main" ágon kell dolgozni közvetlenül, nincsenek pull requestek. Akárhány commitod lehet, a legutolsó állapotot fogjuk nézni.
 12. Az eredmények Moodle-ben kerülnek meghirdetésre (a nyitóoldalon kapcsolódó házi feladat oldalát Moodle-ben megnyitva az oldal alján a "Visszajelzés" szekcióban látható). Eredmények az adott feladatra vonatkozó határidőt követő pár napon belül várhatók.
 13. A házi feladatot külön explicit beadni nem kell, csak legyen fent GitHub-on határidőre a megoldás.
-14.	:exclamation: Amikor a házi feladatod beadottnak tekinted,  célszerű ellenőrizni a böngészőben a GitHub webes felületén a repository-ban a fájlokra való rápillantással, hogy valóban minden változtatást push-oltál-e, és hogy a neptun.txt valóban ki van-e töltve.
+14.	:exclamation: Amikor a házi feladatod beadottnak tekinted, célszerű ellenőrizni a böngészőben a GitHub webes felületén a repository-ban a fájlokra való rápillantással, hogy valóban minden változtatást push-oltál-e, és hogy a neptun.txt valóban ki van-e töltve.
 
 A fenti lépések kapcsán két kérdés vár még megválaszolásra:
 
@@ -53,10 +53,10 @@ Kattintsunk a zöld színű *Code* gombon, majd a lenyíló menüben az *"Open i
 
 ![GitHub repo oldal - Code gomb](images/github-code-button-open.png)
 
-A böngészőnk ekkor jó eséllyel feldob egy ablakot (pl. a Chrome/Edge esetében a címsor alatt) melyben egy külön gombkattintással (*Open…*) tudjuk indítani a Visual Studio-t. A felkínált lehetőségnek lehet, kissé fura a neve, ha *"Microsoft Visual Studio Web Protocol Handler Selector"* néven hivatkozik rá, válasszuk/engedélyezzük ki bátran. Illetve, itt célszerű az "Always allow github.com to open links ..." vagy hasonló szövegű jelölőnégyzetet is pipálni.
+A böngészőnk ekkor jó eséllyel feldob egy ablakot (pl. a Chrome/Edge esetében a címsor alatt) melyben egy külön gombkattintással (*Open…*) tudjuk indítani a Visual Studio-t. A felkínált lehetőségnek lehet, hogy kissé fura a neve, ha *"Microsoft Visual Studio Web Protocol Handler Selector"* néven hivatkozik rá, válasszuk/engedélyezzük ki bátran. Illetve, itt célszerű az "Always allow github.com to open links ..." vagy hasonló szövegű jelölőnégyzetet is pipálni.
 Ha minden jól megy, a Visual Studio elindul, és indulás után feldob egy ablakot, melyben a "Repository location" ki is van töltve a repository-nk URL-jével. A Path alatt adjuk meg, hogy hova szeretnénk a háttértárunkon clone-ozni, majd kattintsunk a *Clone* gombra:
 
-![Repository clone Visual Studionban](images/vs-clone-a-repository.png)
+![Repository clone Visual Studioban](images/vs-clone-a-repository.png)
 
 !!!note "Alternatív klónozási lehetőség Visual Studioban"
     Ha nem működik a böngészőablakban az *"Open in Visual Studio"* vagy *"Microsoft Visual Studio Web Protocol Handler Selector"* hivatkozás, akkor indulhatunk egyből a Visual Studio-ból is. Csak indítsuk el a Visual Studio-t, és a startup ablakban válasszuk jobboldalt a *"Clone Repository"* gombot (vagy a startup ablakot átugorva válasszuk ki a *"Git/Clone Repository menüt"* a VS főablakában), melynek hatására a fenti ablak jelenik meg, a Repository URL-be pedig írjuk be a repónk URL-jét. A *Clone*-ra kattintva néhány másodperc alatt a repository a megadott célmappába klónozódik.
@@ -65,7 +65,7 @@ A klónozást követően pl. Windows Explorer-ben meg tudjuk tekinteni a létreh
 
 ![Git repository a fájlrendszerben](images/git-folder-in-explorer.png)
 
-Ebből jól látható, hogy egy Git repository nem más, mint mappák és fájlok gyűjteménye, valamint egy a gyökérben található .git mappa, mely (némi egyszerűsítéssel élve) az egyes fájlok verziótörténetét tartalmazza. A munka megkezdéséhez csak meg kell nyissuk az adott házi feladathoz tartozó .sln kiterjesztésű solution fájlt (pl. duplakatt Windows Explorerben).
+Ebből jól látható, hogy egy Git repository nem más, mint mappák és fájlok gyűjteménye, valamint egy a gyökérben található .git mappa, mely (némi egyszerűsítéssel élve) az egyes fájlok verziótörténetét tartalmazza. A munka megkezdéséhez csak meg kell nyitnunk az adott házi feladathoz tartozó .sln kiterjesztésű solution fájlt (pl. duplakatt Windows Explorerben).
 
 !!!note "Az első házi feladat speciális (két solution is van)!"
     Az első házi feladat kivételesen két fő részből áll, melyekhez eltérő solution tartozik. Az elsőhöz a Feladat1 mappában található MusicApp.sln fájlt, a másodikhoz a Feladat2-ben található Shapes.sln-t kell megnyitni. A megnyitást megtehetjük Explorerből, az adott .sln fájlon duplán kattintva. Ugyanakkor van erre más mód is: amennyiben Visual Studio-ban a Git gyökérmappát nyitottuk meg (a *Clone*-t követően is ez a helyzet állt elő) a Solution Explorer nézet fejlécében *"Switch View"* gombot lenyomva a Solution Explorer listázza a Git gyökérmappa alatti solution-öket, és ezek bármelyikén duplán kattintva az adott solution megnyílik:
@@ -76,7 +76,7 @@ Ebből jól látható, hogy egy Git repository nem más, mint mappák és fájlo
 
 Alternatív lehetőség a parancssor használata. Parancssorban navigáljunk abba a mappába, ahová a forráskódot ki szeretnénk clone-ozni, és itt adjuk ki a következő parancsot:
 `git clone <repo url>`
-, ahol a `<repo url>` a repositorynk címe (pl. böngésző címsávjából bemásolva, ehhez hasonló: <https://github.com/bmeviauab00/hazi1-2024-myusername>). A parancs lefutása után egy a repository nevének megfelelő alkönyvtárban találjuk az új helyi repónkat.
+, ahol a `<repo url>` a repositorynk címe (pl. böngésző címsávjából bemásolva, ehhez hasonló: <https://github.com/bmeviauab00/hazi1-2026-myusername>). A parancs lefutása után egy a repository nevének megfelelő alkönyvtárban találjuk az új helyi repónkat.
 
 !!! note "Parancssori git"
     Ne féljünk a parancssori git-et használni, egy repository clone-ozásának tulajdonképpen ez a legegyszerűbb módja.
@@ -97,7 +97,7 @@ Az előző commit óta eszközölt változtatások megtekintéséhez válasszuk 
 A változtatások commit-álásához írjunk a fenti szövegmezőbe egy a változtatásokra jellemző egy-két soros leírást (pl. "Végső megoldás", "Az xyz hiba javítása" stb.). A lehetőségeink ezt követően a következők:
 
 - **"Commit All"** gomb: Csak helyben commit-olja a változtatásokat (a központi Git repóban mindaddig nem jelenik meg a commit, amíg egy külön Push paranccsal fel nem "toljuk").
-- **"Commit All and Push"**, mely a "Commit All" gomb melletti nyíl lenyitásával érhető el. Hatása: commit, majd utána push. Ha a változtatásainkat egyből publikálni is szeretnénk a GitHub-on levő központi repóba, akkor használjuk bátran parancsot. **A házi feladatok tekintetében célszerű is ezt használni, mert ekkor nincs szükség a commit-ot követően külön push műveletre.**
+- **"Commit All and Push"**, mely a "Commit All" gomb melletti nyíl lenyitásával érhető el. Hatása: commit, majd utána push. Ha a változtatásainkat egyből publikálni is szeretnénk a GitHub-on levő központi repóba, akkor használjuk bátran ezt a parancsot. **A házi feladatok tekintetében célszerű is ezt használni, mert ekkor nincs szükség a commit-ot követően külön push műveletre.**
 Megjegyzés: ha a parancs az "Unable to push to the remote repository because your local branch is behind the remote branch" hibával zárul, előbb pull-oljuk, majd ismételjük meg a push-t. Erre még alább visszatérünk.
 - **"Commit All and Sync"**, mely a "Commit All" gomb melletti nyíl lenyitásával érhető el. Hatása: commit után pull (leszedi a saját helyi repónkba mások esetleges változtatásait a központi repóból), majd push. Így a központi repóban levő esetleges változásokat lehozza a helyi repónkba, az ezt követően a változtatásainkat egyből publikálja is ide.
 
@@ -106,7 +106,7 @@ Megjegyzés: ha a parancs az "Unable to push to the remote repository because yo
 
 ### Push, Pull
 
-A commit művelet csak a helyi repository-ban "érvényesíti" a változtatásokat. Ezt követően a változtatásokat a GitHub központi repository-nkba fel kell tölteni a push művelettel. Erre a lépésre csak akkor van szükség, ha a commit során nem használtuk a *"Commit All and Push"* vagy *"Commit All and Sync"* parancsokat. A push művelet VS-ben a *"Git/Push"* menü segítésével indítható. 
+A commit művelet csak a helyi repository-ban "érvényesíti" a változtatásokat. Ezt követően a változtatásokat a GitHub központi repository-nkba fel kell tölteni a push művelettel. Erre a lépésre csak akkor van szükség, ha a commit során nem használtuk a *"Commit All and Push"* vagy *"Commit All and Sync"* parancsokat. A push művelet VS-ben a *"Git/Push"* menü segítségével indítható. 
 Ha többen dolgozunk, a központi repository-ban lehetnek mások által pusholt, hozzánk még le nem töltött commitok (vagy akár olyanok, melyeket mi magunk push-oltunk egy másik lokális clone-ból, vagy ha a GitHub online felületén eszközöltünk a kódon változásokat). Ezeket a pull művelettel tudjuk a helyi repónkba merge-elni (Git/Pull menü). A házi feladat vonatkozásában ezt nem használjuk, hiszen mindenki saját dedikált központi repositoryval rendelkezik, melyben egyedül dolgozik (kivéve, ha esetleg valaki a GitHub felületének segítségével változtatott a kódon, akkor ezt egy pull-lal tudja a helyi repójába lehozni).
 
 !!! note
@@ -125,7 +125,7 @@ Ha többen dolgozunk, a központi repository-ban lehetnek mások által pusholt,
 A Git egy változáskövető rendszer. A változás egysége a commit (melyben tetszőleges számú fájlt érintő változás lehet), a Git historyban a commitok egymásutániságát láthatjuk. A fájlokat érintő változásokon túlmenően minden commithoz tartozik egy egyedi azonosító (commit hash), időbélyeg, illetve egy szerző. A szerző felhasználó, aki a változásokat eszközölte (valójában van külön Author és Commiter, de a kettő általában ugyanaz). Visual Studioban a historyt a View/Git Repository menüvel tudjuk megjeleníteni, de a history természetesen a GitHub online felületén is megjeleníthető.
 A Visual Studioban a *"Git Repository"* nézetet a View/Git Repository menüvel tudjuk megjeleníteni.
 
-- Outgoing commits: Megmutatja, hogy milyen, a lokális repository-nkba már létező, de a központi repóba még nem push-olt commitok vannak. Ezeket a Push művelettel tudjuk feltölteni.
+- Outgoing commits: Megmutatja, hogy milyen, a lokális repository-nkban már létező, de a központi repóba még nem push-olt commitok vannak. Ezeket a Push művelettel tudjuk feltölteni.
 - Incoming commits: Megmutatja, hogy a központi repository-ban milyen mások által pusholt, hozzánk még le nem töltött commitok vannak. Ezek akkor jelennek meg, ha a Fetch paranccsal lehozzuk a helyi repóba (ez még nem merge-el). Ezeket a Pull művelettel tudjuk a helyi repónkba merge-elni. A fetch parancsot ritkán használjuk: általában a pullt használjuk magában, ami egy fetch + merge (változások merge-elése a helyi repóba) kombinációja.
 
 Példa:
@@ -138,7 +138,7 @@ Példa:
 ### Egyéb irányelvek
 
 A Git commit és push során megfigyelhetjük, hogy a solution-jeink köztes és kimeneti állományai (.dll, .exe stb. fájlok) nem kerülnek bele a commitba, és így nem kerülnek fel GitHubra sem. Ez így is van jól, ezen állományok bármikor reprodukálhatók, a verziókezelő rendszernek nem feladata ezek tárolása, csak felesleges és zavaró helyfoglalók lennének. Felmerül a kérdés, honnan tudja a Git, hogy mely állományokat szükséges figyelmen kívül hagyni a commit során. Erre szolgál a repository-ban (tipikusan annak gyökérmappájában) található **.gitignore** fájl, mely felsorolja azon mappákat, fájlkiterjesztéseket, illetve egyedi fájlokat, melyeket a commit során figyelmen kívül szeretnénk hagyni. A .gitignore fájl tartalma teljes egészében a kezünk alá tartozik, szabadon szerkeszthető/commitálható/pusholható.
-A tárgy keretében minden kiinduló repónak része egy .gitignore fájl, ne változtassuk a tartalmát! Így a commit/push során a kimeneti állományok a házi feladatok esetében sem kerülnek fel GitHub-ra, és egy így is van rendjén.
+A tárgy keretében minden kiinduló repónak része egy .gitignore fájl, ne változtassuk a tartalmát! Így a commit/push során a kimeneti állományok a házi feladatok esetében sem kerülnek fel GitHub-ra, és ez így is van rendjén.
 
 A félévben a feladatok megoldása során az egyes osztályok, interfészek stb. forráskódját külön fájlba kell tenni, vagyis egy C# forrásfájlban egy osztály/interfész/stb. definíciója legyen.
 

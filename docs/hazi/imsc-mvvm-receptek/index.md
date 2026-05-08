@@ -105,10 +105,10 @@ Szintén fontos, hogy a függvények `Task`-kal térnek vissza, tehát aszinkron
 
 A kedvencek kezelése a labor során bevezetett `IRecipeService` interfész és az ezt megvalósító `RecipeService` osztály feladata legyen. 
 
-Első lépésben azt kell megoldani, hogy a `RecipeService` számára rendelkezésre álljon egy `ILocalSettingsService` interfészt megvalósító objektum, melyet fel tud használni  megvalósításában a kedvenc receptazonosítók eltárolására és lekérdezésére. A célunk az, hogy `RecipeService`-ben `ILocalSettingsService` interfészként **kapjuk meg** és **tároljuk** ezt az implementációs objektumot, semmiféle függést nem szeretnénk itt bevezetni a konkrét implementációtól. Ezt a laboron már alkalmazott DI konténer segítségével valósítsuk meg.
+Első lépésben azt kell megoldani, hogy a `RecipeService` számára rendelkezésre álljon egy `ILocalSettingsService` interfészt megvalósító objektum, melyet fel tud használni a megvalósításában a kedvenc receptazonosítók eltárolására és lekérdezésére. A célunk az, hogy `RecipeService`-ben `ILocalSettingsService` interfészként **kapjuk meg** és **tároljuk** ezt az implementációs objektumot, semmiféle függést nem szeretnénk itt bevezetni a konkrét implementációtól. Ezt a laboron már alkalmazott DI konténer segítségével valósítsuk meg.
 
 !!! tip 
-    A megvalósítás során a `RecipeService`-ben ahhoz hasonlóan kell kezeljük a `ILocalSettingsService`-t, mint a ahogy a labor során a `MainPageViewModel`-ben kezeltük a `IRecipeService`-t.
+    A megvalósítás során a `RecipeService`-ben ahhoz hasonlóan kell kezelnünk az `ILocalSettingsService`-t, mint ahogy a labor során a `MainPageViewModel`-ben kezeltük az `IRecipeService`-t.
 
 
 Miután a fenti előkészítéssel elkészültél, valósítsd meg a szükséges funkciókat a `RecipeService` osztályban! Az alábbiakban ehhez némi iránymutatást adunk.
@@ -165,7 +165,7 @@ Ezt az igaz-hamis állapotot és módosító műveletet célszerű a `RecipeDeta
             A megoldás elve hasonlít a SendComment parancsfüggvényhez, de itt a CanExecute-tal nem kell foglalkozzunk, hiszen az új commandunk mindig futtatható.
 
     !!! note "Állapot tárolása a modellben"
-        A kedvenc állapotot a `RecipeHeader` modellben is tárolhatnánk, viszont az két másik problémát is generálna: a modellnek kell megvalósítania az `INotifyPropertyChanged` interfészt, hogy az állapot változását jelezni tudja.  Ezen felül az új property értékét valamelyik másik rétegben (ViewModel vagy Service) kellene kitölteni, mivel ez az infó csak lokálisan érhető el, a `RecipeHeader`pedig alapvetően most csak egy DTO (Data Transfer Object) a modell rétegben.
+        A kedvenc állapotot a `RecipeHeader` modellben is tárolhatnánk, viszont az két másik problémát is generálna: a modellnek kell megvalósítania az `INotifyPropertyChanged` interfészt, hogy az állapot változását jelezni tudja. Ezen felül az új property értékét valamelyik másik rétegben (ViewModel vagy Service) kellene kitölteni, mivel ez az infó csak lokálisan érhető el, a `RecipeHeader` pedig alapvetően most csak egy DTO (Data Transfer Object) a modell rétegben.
 
 ??? success "RecipeDetailPage (vagyis a View) módosítása"
 
@@ -179,17 +179,17 @@ Ezt az igaz-hamis állapotot és módosító műveletet célszerű a `RecipeDeta
 
     - `x:Bind` használata, ahol nem property-t kötünk, hanem egy a xaml.cs-ben lévő segédfüggvényt, mely a konverziót elvégzi. Vagyis property kötés helyett függvény/funkció kötést használunk. Előadásanyagban a "Property kötése funkciókhoz"-ra érdemes rákeresni, illetve a 3. házi feladatban a "függvény kötés példa"-ra.
     - Az `IValueConverter` interfész implementálása és használata az adatkötés során.
-    - A `RecipeDetailPageViewModel`-ben tároljuk a nézethez szükséges adatokat új tuljadonságokat bevezetve (a tulajdonságok típusa a nézet számára szükséges `Symbol` és `string`), és ezekhez történik az adatkötés.
-        - Talán ez a legegyszerűbb megoldás, ha nem szeretnénk külön konvertert írni vagy az adatkötéseket "bonyolítani", viszont a legkevésbé is lesz karbantartható, mivel a ViewModel view specifikus adatokat is tartalmaz, melyeket külön karban is kell tartani ha a bool property megváltozik.
+    - A `RecipeDetailPageViewModel`-ben tároljuk a nézethez szükséges adatokat új tulajdonságokat bevezetve (a tulajdonságok típusa a nézet számára szükséges `Symbol` és `string`), és ezekhez történik az adatkötés.
+        - Talán ez a legegyszerűbb megoldás, ha nem szeretnénk külön konvertert írni vagy az adatkötéseket "bonyolítani", viszont a legkevésbé lesz karbantartható, mivel a ViewModel view specifikus adatokat is tartalmaz, melyeket külön karban is kell tartani, ha a bool property megváltozik.
 
 !!! example "1.2. feladat BEADANDÓ"
-    Illessz be egy képernyőképet az alkalmazásról, ahol a teendő részletes oldalon megjelenik a kedvencnek jelölés gomb! (`f1.2.1.png`)
+    Illessz be egy képernyőképet az alkalmazásról, ahol a recept részletes oldalon megjelenik a kedvencnek jelölés gomb! (`f1.2.1.png`)
 
-    Illessz be egy képernyőképet az alkalmazásról, ahol a teendő részletes oldalon egy már kedvencnek jelölt recepthez a kedvencekből eltávolítás gomb jelenik meg! (`f1.2.2.png`)
+    Illessz be egy képernyőképet az alkalmazásról, ahol a recept részletes oldalon egy már kedvencnek jelölt recepthez a kedvencekből eltávolítás gomb jelenik meg! (`f1.2.2.png`)
 
 ### 1.3 Kedvencek oldal navigáció
 
-A kedvencek oldalra navigáláshoz több lépésre is szükségünk lesz, melyek a kiinduló projekt sajátosságaiból adódódnak, de ezeket itt részletesen átvesszük (a navigáció megvalósítása nem része a tanagyagnak).
+A kedvencek oldalra navigáláshoz több lépésre is szükségünk lesz, melyek a kiinduló projekt sajátosságaiból adódnak, de ezeket itt részletesen átvesszük (a navigáció megvalósítása nem része a tananyagnak).
 
 1. Hozzuk létre a `FavoritesPage`-et a `Views` mappában (Add/New Item/Blank Page (WinUI3))
 

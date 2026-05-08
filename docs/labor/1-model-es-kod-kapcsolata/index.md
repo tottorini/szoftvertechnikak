@@ -318,7 +318,7 @@ public void AddEquipment(IEquipment eq)
 
 ### IEquipment megvalósítók
 
-Korábbi döntésünk értelmében az `IEquipment` interfészt használjuk az különböző alkatrésztípusok egységes kezelésére. Esetünkben mind a `SoundCard`, mind a `HardDisk` osztály rendelkezik `GetAge()` és `GetPrice()` metódussal, mégsem tudjuk őket egységesen kezelni (pl. közös listában tárolni). Ahhoz, hogy ezt meg tudjuk tenni, el kell érnünk, hogy mindkét osztály megvalósítsa az `IEquipment` interfészt. Módosítsuk a forrásukat:
+Korábbi döntésünk értelmében az `IEquipment` interfészt használjuk a különböző alkatrésztípusok egységes kezelésére. Esetünkben mind a `SoundCard`, mind a `HardDisk` osztály rendelkezik `GetAge()` és `GetPrice()` metódussal, mégsem tudjuk őket egységesen kezelni (pl. közös listában tárolni). Ahhoz, hogy ezt meg tudjuk tenni, el kell érnünk, hogy mindkét osztály megvalósítsa az `IEquipment` interfészt. Módosítsuk a forrásukat:
 
 ```csharp
 public class SoundCard : IEquipment

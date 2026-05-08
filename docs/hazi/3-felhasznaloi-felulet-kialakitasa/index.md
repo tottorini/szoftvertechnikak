@@ -134,14 +134,14 @@ A felületen a következő struktúrában helyezkednek el az elemek:
     </CommandBar>
     ```
     !!! note "Világos/sötét megjelenés"
-        A Windows beállítasainak függvényében (light/dark mode) lehetséges, hogy sötét háttéren világos színekkel jelenik meg a felület, ez is teljesen rendben van. A WinUI alkalmazások alapértelmezett esetben alkalmazkodnak az operációs rendszer beállításához, ebből ered ez a viselkedés.
+        A Windows beállításainak függvényében (light/dark mode) lehetséges, hogy sötét háttéren világos színekkel jelenik meg a felület, ez is teljesen rendben van. A WinUI alkalmazások alapértelmezett esetben alkalmazkodnak az operációs rendszer beállításához, ebből ered ez a viselkedés.
 
     !!! note "ThemeResource"
         A példában szereplő `ThemeResource`-okat használhatjuk a színek és stílusok beállítására, melyek a felület témájától függően változnak. Például a `AppBarBackgroundThemeBrush` a felület témájától (világos/sötét) függően a megfelelő színű háttér lesz.
 
         Részletekért lásd a [dokumentációt](https://docs.microsoft.com/en-us/windows/uwp/design/style/color#theme-resources) és a [WinUI 3 Gallery App Colors](winui3gallery://item/Colors) példáit.
 
-Ha jól dolgoztunk, az alkalmazást futtatva, `CommandBar`-nak a megfelelő helyen meg kell jelennie.
+Ha jól dolgoztunk, az alkalmazást futtatva, a `CommandBar`-nak a megfelelő helyen meg kell jelennie.
 
 ### Lista megjelenítése
 
@@ -159,7 +159,7 @@ A `CommandBar` alatti cellában egy listába (`ListView`) kerüljenek a teendők
 * A `ListView` háttere legyen azonos a `CommandBar`-éval, így baloldalt egy egybefüggő sávot alkotnak.
 
 ??? tip "Elemek a listában"
-    Mindig gondoljuk át, hogy egy objektumhoz történő, vagy listás adatkötésről van-e szó, és ennek megfelelő technikát alkalmazzunk! Jelen házi feladatban nem biztos, olyan sorrendben jönnek ezek elő, mint ahogy laboron szerepeltek!"
+    Mindig gondoljuk át, hogy egy objektumhoz történő, vagy listás adatkötésről van-e szó, és ennek megfelelő technikát alkalmazzunk! Jelen házi feladatban nem biztos, hogy olyan sorrendben jönnek ezek elő, mint ahogy laboron szerepeltek!
 
 ??? tip "Feltételes színezés"
     A cím színezésére használhatunk konvertert vagy `x:Bind` alapú függvény kötést is.
@@ -265,7 +265,7 @@ Az űrlapban a következő elemek legyenek egymás alatt.
 * **Készültség**: jelölőnégyzet (`CheckBox`)
 * **Mentés**: gomb beépített accent stílussal (`Style="{StaticResource AccentButtonStyle}"`)
 
-Az űrlaphoz nem kell speciális, egyedi vezérlőt (pl. `UserControl` készíteni): egyszerűen használjuk valamelyik, a feladathoz jól illeszkedő layout panel típust. 
+Az űrlaphoz nem kell speciális, egyedi vezérlőt (pl. `UserControl`-t) készíteni: egyszerűen használjuk valamelyik, a feladathoz jól illeszkedő layout panel típust. 
 
 Néhány fenti és alább meghatározott követelmény megvalósítása kapcsán lentebb görgetve lenyíló mezőkben némi iránymutatást ad az útmutató.
 
@@ -303,10 +303,10 @@ Az űrlap elrendezése
     1. Az űrlapban lévő adatokat egy új `TodoItem` objektumba gyűjtsük össze, melynek tulajdonságait adatkötjük (két irányúan!) a felületen. Vezessünk be egy tulajdonságot ehhez `EditedTodo` néven. Ettől a ponttól kezdve két megközelítéssel dolgozhatunk:
         1. Az EditedTodo alapesetben null. Amikor a felhasználó új to-do elem felvételét kezdeményezi, akkor hozzuk létre az új EditedTodo objektumot, mely az adott új elem adatait tárolja. Mentéskor ezt az objektumot tesszük bele a listába. Így minden új elem felvételekor az EditedTodo egy új objektumra hivatkozik. 
         2. Egy közös EditedTodo objektumot használunk minden to-do elem felvételekor. Ezt már az oldal létrehozáskor példányosítjuk. Amikor a felhasználó új to-do elem felvételét kezdeményezi (vagy a mentés végén), akkor gondoskodni kell az EditedTodo alapértelmezett értékekkel való feltöltéséről. Mentéskor egy másolatot kell készíteni róla és ezt kell a közös listába beletenni.
-    2. A kövezkezőkben a fenti 1. megközelítés lépéseire adunk iránymutatást, de mindenképpen érdemes először önálóan próbálkozni. 
+    2. A következőkben a fenti 1. megközelítés lépéseire adunk iránymutatást, de mindenképpen érdemes először önállóan próbálkozni. 
     3. Az EditedTodo kezdőértéke legyen null, illetve a _Hozzáadás_ gombra kattintva legyen példányosítva az `EditedTodo`. 
     4. A mentés során a `Todos` listához adjuk hozzá a szerkesztett teendő objektumot. Gondoljunk arra, hogy az adatkötéseknek frissülniük kell a felületen a lista tartalmának változása során (ehhez az adataink tárolásán kell változtatni).
-    5. A mentés során az `EditedTodo` property-t nullozzuk ki. Ezt annak érdekében, tesszük, hogy a következő to-do elem felvételekor az adatkötés miatt üresek legyenek az űrlapon a vezérlők, ne a korábbi to-do elem adatai legyenek rajta. Gondoljuk át, ez elég lesz-e a megoldáshoz? Próbáljuk is ki a megoldásunkat! Amikor az `EditedTodo` tulajdonságot állítjuk, a kötött vezérlőknek frissülniük kell. Mire van ehhez szükség? 
+    5. A mentés során az `EditedTodo` property-t nullozzuk ki. Ezt annak érdekében tesszük, hogy a következő to-do elem felvételekor az adatkötés miatt üresek legyenek az űrlapon a vezérlők, ne a korábbi to-do elem adatai legyenek rajta. Gondoljuk át, ez elég lesz-e a megoldáshoz? Próbáljuk is ki a megoldásunkat! Amikor az `EditedTodo` tulajdonságot állítjuk, a kötött vezérlőknek frissülniük kell. Mire van ehhez szükség? 
         (Tipp: itt most nem az érdekel minket, hogy az `EditedTodo` által hivatkozott `TodoItem` tulajdonságai, pl. `Title`, `Description` változnak, hanem a `MainPage` osztály `EditedTodo` tulajdonsága változik: ennek megfelelően az `EditedTodo`-t tartalmazó osztályban kell a megfelelő interfészt megvalósítani).
    
 ??? success "Az űrlap láthatóság szabályozása"
@@ -329,13 +329,13 @@ Az űrlap elrendezése
         2. Konverter alkalmazása.
 
 ??? tip "Prioritások listája"
-    A `ComboBox`-ban a `Priority` felsorolt típus értékeit jelenítsük meg. Ehhez használhatjuk a `Enum.GetValues` függvényt, amihez készítsünk egy tulajdonságot a `MainPage.xaml.cs`-ben.
+    A `ComboBox`-ban a `Priority` felsorolt típus értékeit jelenítsük meg. Ehhez használhatjuk az `Enum.GetValues` függvényt, amihez készítsünk egy tulajdonságot a `MainPage.xaml.cs`-ben.
 
     ```csharp
     public List<Priority> Priorities { get; } = Enum.GetValues(typeof(Priority)).Cast<Priority>().ToList();
     ```
 
-    A `ComboBox` `ItemsSource` tulajdonságához kössük az `Priorities` listát.
+    A `ComboBox` `ItemsSource` tulajdonságához kössük a `Priorities` listát.
 
     ```xml
     <ComboBox ItemsSource="{x:Bind Priorities}" />

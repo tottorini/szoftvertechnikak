@@ -677,7 +677,7 @@ Text="{x:Bind NewPerson.Age, Mode=TwoWay}"
 Próbáljuk ki! Így az adatkötés már mindkét irányba működik:
 
 * Ha a forrástulajdonság (pl. `NewPerson.Name`) változik, akkor a vezérlő kötött tulajdonsága (pl. `TextBox.Text`) ezzel szinkronban marad.
-* Ha a cél (vezérlő) tulajdonság változik (pl. `TextBox.Text`), akkor az forrástulajdonság (pl. `NewPerson.Name`) ezzel szinkronban marad.
+* Ha a cél (vezérlő) tulajdonság változik (pl. `TextBox.Text`), akkor a forrástulajdonság (pl. `NewPerson.Name`) ezzel szinkronban marad.
 
 ## Listák
 
