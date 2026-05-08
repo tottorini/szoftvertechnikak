@@ -11,7 +11,7 @@ The initial framework of each homework assignment is published using GitHub/GitH
 3. Open the link corresponding to the assignment. Each assignment will have a different link, which will be gradually announced on the subject webpage throughout the semester. The format will be similar to: <https://classroom.github.com/abcdefgh>. If you encounter an authentication error ("There was a problem authenticating with GitHub, please try again."), try copying and pasting the link directly into the browser's address bar.
 4. If prompted, grant GitHub Classroom permission to use your account information.
 5. You will see a page where you can accept the assignment ("Accept this assignment"). Click the button.
-6. Wait for the repository to be created. GitHub does not always refresh the page automatically, so manually refreshing (e.g., pressing F5) may be necessary. Once the repository is ready, the page will display its URL, which you can click to access the repository (e.g., <https://github.com/bmeviauab00/hazi1-2024-username>). However, saving the URL is not strictly necessary, as you can always find it later among your repositories on the GitHub homepage (<https://github.com/>).
+6. Wait for the repository to be created. GitHub does not always refresh the page automatically, so manually refreshing (e.g., pressing F5) may be necessary. Once the repository is ready, the page will display its URL, which you can click to access the repository (e.g., <https://github.com/bmeviauab00/hazi1-2026-username>). However, saving the URL is not strictly necessary, as you can always find it later among your repositories on the GitHub homepage (<https://github.com/>).
 7. Clone the repository (we will discuss how to do this shortly). Inside, you will find a framework or starter code. Work on this and modify it as needed. Stay on the default Git branch (if this doesn't mean anything to you, don't worry—this note is primarily for those who are experienced in Git and usually work with multiple branches).
 8. :exclamation: Do not modify, delete, or alter the content of the `.github/workflows` folder within the project.
 9. :exclamation: You must work within the provided solution/project from the initial repository. Do not create a new project/solution.
@@ -83,7 +83,7 @@ Another option is using the command line. Navigate to the folder where you want 
 
 `git clone <repo url>`
 
-where `<repo url>` is your repository's URL (copied from the browser, e.g., `https://github.com/bmeviauab00/hazi1-2024-myusername`). After running the command, the repository will be cloned into a folder named after the repository.
+where `<repo url>` is your repository's URL (copied from the browser, e.g., `https://github.com/bmeviauab00/hazi1-2026-myusername`). After running the command, the repository will be cloned into a folder named after the repository.
 
 !!! note "Command-line Git"
     Don't be afraid to use Git in the command line—cloning a repository this way is actually the simplest method.

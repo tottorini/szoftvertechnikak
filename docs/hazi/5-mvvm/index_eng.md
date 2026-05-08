@@ -168,7 +168,7 @@ What does the MVVM pattern mean for our example?
 * The `PersonListPageViewModel` will work with the model and handle user interactions (event handlers).
 * Since we are using the Relaxed MVVM pattern (not Strict MVVM), we do not need to introduce a wrapper `PersonViewModel` around the `Person` model class.
 
-Task: Refactor the existing logic to follow the MVVM (Model-View-ViewModel) pattern as described above. Move the `PersonListPageViewModel` class into a newly created `ViewModels` folder. Try to figure out the solution yourself based on the provided hints! Here's a helpful tip in advance (since this part is a bit trickier): for events, you can bind event handler methods using data binding — see the the lecture. (After the refactor, event handlers must only be specified via bindings.) Also important: You can only bind to public properties or methods, so keep that in mind when refactoring!
+Task: Refactor the existing logic to follow the MVVM (Model-View-ViewModel) pattern as described above. Move the `PersonListPageViewModel` class into a newly created `ViewModels` folder. Try to figure out the solution yourself based on the provided hints! Here's a helpful tip in advance (since this part is a bit trickier): for events, you can bind event handler methods using data binding — see the lecture. (After the refactor, event handlers must only be specified via bindings.) Also important: You can only bind to public properties or methods, so keep that in mind when refactoring!
 
 ??? "Tips / solution validation"
     1. From `PersonListPage.xaml.cs`, you should move almost everything (except the `this.InitializeComponent()` call in the constructor) into the new `PersonListPageViewModel` class. These are part of the UI logic, which belongs in the ViewModel.
@@ -219,7 +219,7 @@ Multiple valid solutions are possible for this problem. What they all have in co
     }
 ```
 
-``` xml title="PersonListPage.xaml-be a '-' gombhoz"
+``` xml title="PersonListPage.xaml — for the '-' button"
     IsEnabled="{x:Bind ViewModel.IsDecrementEnabled, Mode=OneWay}"
 ```
 

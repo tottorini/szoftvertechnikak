@@ -30,7 +30,7 @@ The required development environment is the usual one, described [here](../fejle
 - Open and work in the provided `MultiThreadedApp.sln` file from the cloned folder.
 - :exclamation: Some tasks require you to submit **screenshots** showing parts of your solution. These screenshots serve as proof that the work is your own. **The exact content expected in each screenshot is described in the task instructions.** Screenshots must be included in your submission and placed in the root folder of your repository (next to neptun.txt). These will be uploaded to GitHub along with the rest of the repository. Since your repository is private, only instructors will have access to it. If a screenshot contains any information you do not wish to share, you may blur or redact that part before uploading.
 
-Task 0 – Overview of the starter solution
+## Task 0 – Overview of the starter solution
 
 In this assignment, you'll be developing an application that simulates a bicycle race. A core design principle of the implementation is **the separation of application logic and UI**: The application logic must not depend on the UI in any way. The UI, naturally, does depend on the application logic, as it reflects its current state.
 
@@ -38,7 +38,7 @@ The provided starter solution already includes some logic related to both the ap
 
 ![Initial UI](images/app-ui.png)
 
--The top section of the window displays the race track. On the left, bicycles are lined up. The start line, a mid-race checkpoint (depot), and the finish line are shown further to the right. 
+- The top section of the window displays the race track. On the left, bicycles are lined up. The start line, a mid-race checkpoint (depot), and the finish line are shown further to the right. 
 - The bottom section contains buttons for controlling the race. These buttons are not yet functional, but the following behavior will be implemented:
     - `Prepare Race`: Prepares the race by creating bicycle objects and lining them up at the start line.
     - `Start Race`: Starts the race, causing bicycles to compete and advance toward the depot, where they will wait.
@@ -48,7 +48,7 @@ The following animation illustrates what the final working simulation should loo
 
 ![Target UI](images/app-ui-anim.gif)
 
-Simulation mechanics work as folloes (not yet implemented):
+Simulation mechanics work as follows (not yet implemented):
 - Each bicycle will be associated with its own separate thread.
 - The race simulation is structured into iterations: in each iteration, a thread (if not waiting at the starting gate or in the depot) will advance its bicycle forward by a random value. This continues until the bicycle reaches the finish line.
 
@@ -58,7 +58,7 @@ You can toggle between light and dark themes using the keyboard shortcut ++Ctrl+
 
 In the starter framework, the **application logic** classes are only partially implemented. These classes are located in the `AppLogic` folder/namespace. Here's an overview of their structure and current functionality:
 
-- `Bike`: Represents a single bicycle in the race, with the following properties: start number, current position on the track, an a flag that indicates whether this bike won the race. The `Step` method is implemented to step the bike by a random distance during the race.
+- `Bike`: Represents a single bicycle in the race, with the following properties: start number, current position on the track, and a flag that indicates whether this bike won the race. The `Step` method is implemented to step the bike by a random distance during the race.
 - `Game`: Handles the core logic for controlling the game (this could be split into smaller parts, but for simplicity, we will primarily work in this class).
     - Constants defining the positions of the race track elements: `StartLinePosition`,  `DepoPosition`, `FinishLinePosition`
     - A list of bicycles in the race: `Bikes`
@@ -189,7 +189,7 @@ Now that the display logic is complete, we shift our focus to application logic 
 Reminder:
 
 - Each bicycle will have its own separate thread.
-- The game/simulation runs in iterations: in each iteration, the thread: step the bike by a random distance (if not waiting at start or in depot), an continues until it reaches the finish line.
+- The game/simulation runs in iterations: in each iteration, the thread: step the bike by a random distance (if not waiting at start or in depot), and continues until it reaches the finish line.
 
 Steps to implement:
 
@@ -252,7 +252,7 @@ but you will learn much more if you try to solve it yourself first — use the p
     - In Visual Studio, zoom so that both the `CreateBike` and `BikeThreadFunction` methods of the `Game` class are visible. In the foreground, your application window should be shown.
     - Crop the screenshot so that only the relevant parts are shown (e.g., do NOT include: VS Solution Explorer, debugging side and bottom panels, or the Windows taskbar).
 
-## Task 2 – Starting the race
+## Task 3 – Starting the race
 
 Implement the race start from the start line and let it run until the bikes reach the depot, following these guidelines:
 
@@ -275,7 +275,7 @@ Implement the race start from the start line and let it run until the bikes reac
     - In Visual Studio, zoom so that the `BikeThreadFunction` method of the `Game` class is visible. In the foreground, your application window should be shown.
     - Crop the screenshot so that only the relevant parts are shown (e.g., do NOT include: VS Solution Explorer, debugging side and bottom panels, or the Windows taskbar).
 
-## Task 3 – Releasing racers from the depot
+## Task 4 – Releasing racers from the depot
 
 Implement the logic for releasing racers from the depot and allowing them to race to the finish line, following these guidelines:
 
@@ -299,7 +299,7 @@ Implement the logic for releasing racers from the depot and allowing them to rac
     - In Visual Studio, zoom so that the `BikeThreadFunction` method of the `Game` class is visible. In the foreground, your application window should be shown.
     - Crop the screenshot so that only the relevant parts are shown (e.g., do NOT include: VS Solution Explorer, debugging side and bottom panels, or the Windows taskbar).
 
-## Task 4 – Implementing the winning bicycle
+## Task 5 – Implementing the winning bicycle
 
 Implement the logic for determining and displaying the winning bicycle according to the following guidelines:
 
@@ -346,7 +346,7 @@ Implement the logic yourself based on the following guidelines and tips.
     - In the foreground, your application window should be shown.
     - Crop the screenshot so that only the relevant parts are shown (e.g., do NOT include: VS Solution Explorer, debugging side and bottom panels, or the Windows taskbar).
 
-## Task 5 – Mutual exclusion and volatile
+## Task 6 – Mutual exclusion and volatile
 
 In the previous task, we saw that checking and setting `hasWinner` needed to be made atomic, meaning we had to ensure mutual exclusion during this process. Now, the question is: are there any other parts of the application where mutual exclusion should have been applied to maintain consistency? To answer this, we need to examine which variables are accessed from multiple threads (i.e., written by one and read by another). The following variables are involved:
 
@@ -355,7 +355,7 @@ Reading and writing int variables with the `=` operator is atomic — so that wo
 - The `isWinner` field in the `Bike` class: It is set by the bike’s thread using `SetAsWinner`, and read by the main thread using the `IsWinner` property during rendering. Its type is `bool`, and reading/writing a bool is atomic, so no need for mutual exclusion.
 - The `hasWinner` field in the `Game` class: Also a bool, so its read/write operations are atomic. However, we had an additional requirement: only one bike can win. Because of that, mutual exclusion was necessary, and we implemented it in the previous task using lock.
 
-You might now think all is fine — but it's not case. **Even when atomicity is guaranteed, a thread may not see the updated value of a shared variable due to caching (e.g., in a CPU register).
+You might now think all is fine — but it's not the case. **Even when atomicity is guaranteed, a thread may not see the updated value of a shared variable due to caching (e.g., in a CPU register).
 This means a thread might still see an old value even after the variable has been changed by another thread.** To prevent this, such shared variables should be marked as `volatile`. This keyword ensures the variable is always read from and written to main memory, not a cached copy. (The behavior of volatile is a bit more complex, and it's explained in more detail in the lectures.)
 Important Note: there is no need to use `volatile` if the variable is only accessed within `lock` blocks or if it's modified via the `Interlocked` class. Therefore, mark the following fields as volatile: `position` and `isWinner`.
 
@@ -366,7 +366,7 @@ class Bike
     private volatile bool isWinner;
 ```
 
-## Task 5 – Step logging (non-thread-safe .NET collections)
+## Task 7 – Step logging (non-thread-safe .NET collections)
 
 Implement logging of every single step taken by the bikes during the race. In the `Game` class, store these steps in a single shared `List<int>` variable (common for all bikes).
 You don't need to do anything with the logged values (e.g., no need to display them). Use the fact that the `Step` method in the `Bike` class returns the step size as an int — this is the value that should be logged (just add it to the list).
@@ -377,7 +377,7 @@ You don't need to do anything with the logged values (e.g., no need to display t
 !!! Note "Thread-safe collections in System.Collections.Concurrent" 
     If you used a suitable collection from the `System.Collections.Concurrent` namespace (e.g., `ConcurrentQueue` instead of `List<T>`), then explicit locking would not be necessary. This namespace contains collection types designed to be thread-safe.
 
-## Task 6 – Refreshing the UI on every change (Accessing UI elements from worker threads)
+## Task 8 – Refreshing the UI on every change (Accessing UI elements from worker threads)
 
 In the current implementation, the UI is refreshed periodically at fixed intervals using a timer. Now, we will replace this solution. Refactor your implementation so that the UI is updated immediately whenever the state of the `Game` changes. The timer-based updates should no longer be used.
 

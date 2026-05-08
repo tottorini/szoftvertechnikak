@@ -21,7 +21,7 @@ Information about the required development environment is available [here](../fe
 
 ## Submission process
 
-- The submission process is the same as in previous assignments. Use GitHub Classroom to create a personal repository. The invitation URL is available on Teams and on AUT portal. Make sure you use the correct URL specific to this homework (each homework has its own unique link). Clone the repository that gets created — it will include the expected structure for your solution. After completing the tasks, commit and push your work.
+- The submission process is the same as in previous assignments. Use GitHub Classroom to create a personal repository. The invitation URL is available on Teams and on the AUT portal. Make sure you use the correct URL specific to this homework (each homework has its own unique link). Clone the repository that gets created — it will include the expected structure for your solution. After completing the tasks, commit and push your work.
 - Open and work in the `Patterns-Extensibility.sln` solution file found among the cloned files.
 - :exclamation: The tasks require you to take **screenshots** of specific parts of your solution, which serve as proof that you created the solution yourself. **The expected content of each screenshot is clearly specified in the individual tasks.** 
 These screenshots must be submitted as part of your solution — place them in the root folder of your repository (next to neptun.txt).
@@ -43,7 +43,7 @@ The starting state of the homework corresponds to the final state of Lab 6. In t
 - Also, starting from `Program.cs`, it's helpful to place breakpoints and step through the code — this reinforces understanding and helps with repetition.
 
 !!! note "Dependency Injection (Manual) vs. Dependency Injection Container"
-    In the lab — and in this homework — we use the simple, manual form of Dependency Injection (this is also what is shown in the lecture). In this case, dependencies of a class are manually instantiated and passed into the constructor. In more complex real-world applications, it is common to use a Dependency Injection Container,  where you can register which implementation to use for each interface type.  However, DI containers are not covered in this course and are not part of the curriculum. The manual version of DI **is required** and critically important — without it, applying the Strategy pattern would not make sense.
+    In the lab — and in this homework — we use the simple, manual form of Dependency Injection (this is also what is shown in the lecture). In this case, dependencies of a class are manually instantiated and passed into the constructor. In more complex real-world applications, it is common to use a Dependency Injection Container, where you can register which implementation to use for each interface type. However, DI containers are not covered in this course and are not part of the curriculum. The manual version of DI **is required** and critically important — without it, applying the Strategy pattern would not make sense.
 
 :warning: In your own words, provide short answers to the following questions in the `readme.md` file located in the *Feladatok* folder:
 
@@ -52,7 +52,7 @@ The starting state of the homework corresponds to the final state of Lab 6. In t
 
 ## Task 2 - Null Strategy
 
-Looking at the constructor parameters of `Anonymizer`, you’ll see that it accepts `null` as a valid value for the progress strategy. This makes sense — the user of the Anonymizer class might not care about progress updates. However, this approach has a downside: if `_progress `is null, then every usage of it in the class must include a null check. Indeed, the code uses the null-conditional operator `?.` to safely invoke methods on `_progress`. But this is a risky practice: in more complex code, if a single null check is missed, it can lead to a runtime `NullReferenceException`. Null reference errors are among the most common and hardest to track.
+Looking at the constructor parameters of `Anonymizer`, you’ll see that it accepts `null` as a valid value for the progress strategy. This makes sense — the user of the Anonymizer class might not care about progress updates. However, this approach has a downside: if `_progress` is null, then every usage of it in the class must include a null check. Indeed, the code uses the null-conditional operator `?.` to safely invoke methods on `_progress`. But this is a risky practice: in more complex code, if a single null check is missed, it can lead to a runtime `NullReferenceException`. Null reference errors are among the most common and hardest to track.
 
 Task: Design a solution that eliminates the possibility of this kind of error. Hint: You need a solution where `_progress` is never null. Try to figure it out on your own first.
 
@@ -150,7 +150,7 @@ Task: Refactor the solution in the Strategy-DI project so that progress handling
 
 In the previous task, we assumed that the “simple progress” and “percent progress” logic was used only once, so there was no need to make it reusable. Accordingly, the “simple progress” logic was provided in the simplest form — as a lambda expression (no need for a separate function). 
 
-However, what if we want to reuse the “simple progress” logic in multiple places, across multiple `Anonymizer` objects? It would be a serious mistake to multiply the lambda expression using copy-paste, as this leads to code duplication — violating the "**Do Not Repeat Yourself**" (**DRY) principle.
+However, what if we want to reuse the “simple progress” logic in multiple places, across multiple `Anonymizer` objects? It would be a serious mistake to multiply the lambda expression using copy-paste, as this leads to code duplication — violating the "**Do Not Repeat Yourself**" (**DRY**) principle.
 
 Question: Is there a way to provide reusable code when working with delegates? Of course there is — with delegates, it's not mandatory to use lambda expressions. As we’ve seen (and used) many times throughout the semester, delegates can refer to regular methods (whether static or instance methods).
 
@@ -159,7 +159,7 @@ If we want the “simple progress” and/or “percent progress” logic to be r
 Task: Extend the previous solution so that the “simple progress” and “percent progress” logic becomes reusable. Specifically:
 
 - Implement the “simple progress” and “percent progress” logic as two static methods in a newly introduced static class named `AllProgresses` (place this class in the root of the project).
-- Add two new usages of the `Anonymizer` class in the `Program.cs `file (in addition to the existing ones), which utilize the two static methods from the `AllProgresses` class (do not use lambda expressions here).
+- Add two new usages of the `Anonymizer` class in the `Program.cs` file (in addition to the existing ones), which utilize the two static methods from the `AllProgresses` class (do not use lambda expressions here).
 - The existing `IProgress` interface and its implementations could theoretically be deleted (since they are no longer used), but do not delete them — keep them so the progress logic from your earlier solutions can still be reviewed.
 
 We’re done — let’s evaluate the solution:

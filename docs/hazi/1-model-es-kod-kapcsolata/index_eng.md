@@ -49,7 +49,7 @@ The initial environment is located in the `Task1` folder. Open the `MusicApp.sln
 !!! warning "Attention!"
     Creating a new solution and/or project file or targeting the project to other/newer .NET versions is prohibited.
 
-A `music.txt` file is located in the `Task1\Input` folder, that serves as the input for the task.
+A `music.txt` file is located in the `Task1\Input` folder, which serves as the input for the task.
 
 ### Task
 
@@ -247,7 +247,7 @@ Follow these steps to use an external `dll`:
 ??? "If you receive a 'Reference is invalid or unsupported' error"
     In rare cases, Visual Studio may show this error. Reinstalling Visual Studio typically resolves the issue.
 
-Now the project includes a reference to `Controls.dll`, allowing access to its classes. (e.g., they can be instantiated or inherited). In *Solution Explorer*, expand the *D*ependencies* and then the *Assemblies* node to see *Controls* appear.
+Now the project includes a reference to `Controls.dll`, allowing access to its classes (e.g., they can be instantiated or inherited). In *Solution Explorer*, expand the *Dependencies* and then the *Assemblies* node to see *Controls* appear.
 
 ![Controls.dll](images/controlsdll.png)
 

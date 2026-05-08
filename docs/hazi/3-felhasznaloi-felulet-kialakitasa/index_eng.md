@@ -130,7 +130,7 @@ The interface elements should be structured as follows:
     </CommandBar>
     ```
     !!! note "Light/dark appearance"
-        Depending on your Windows settings (light/dark mode), the interface may appear with light colors on a dark background. This is completely normal.By default, WinUI applications adapt to the operating system's theme settings, which is why this behavior occurs.
+        Depending on your Windows settings (light/dark mode), the interface may appear with light colors on a dark background. This is completely normal. By default, WinUI applications adapt to the operating system's theme settings, which is why this behavior occurs.
 
     !!! note "ThemeResource"
         The example uses `ThemeResource` values to set colors and styles that automatically adjust based on the application's theme. For instance, `AppBarBackgroundThemeBrush` will apply the appropriate background color depending on whether the theme is light or dark.
@@ -279,7 +279,7 @@ Form layout
 
 * Use the `Header` property in `TextBox`, `ComboBox`, and `DatePicker` controls to define their labels instead of adding separate `TextBlock` elements.
 * Ensure sufficient spacing between form elements. It should be about 15 pixels (use the `StackPanel` `Spacing` property for easy control).
-* Add a visible border to the form: This is not for styling but to clearly show where the form is placed (alternatively, a background color change could be used.). Set `BorderThickness="1"` and `BorderBrush="LightGray"` for clear visibility.
+* Add a visible border to the form: This is not for styling but to clearly show where the form is placed (alternatively, a background color change could be used). Set `BorderThickness="1"` and `BorderBrush="LightGray"` for clear visibility.
 * Apply margins: Left, right, and bottom margins should be 8 px. Top margin should be 0 px. This ensures consistent spacing between the form and its container, even when the window is resized.
 * Maintain spacing inside the form: Add 15 px padding at the top and bottom. Add 10 px padding on the left and right. Instead of setting margins individually for each control, adjust the container’s **padding** to maintain spacing between the form’s border and its contents.
 * Ensure the form and textboxes resize with the window, as illustrated below:
@@ -355,7 +355,7 @@ Form layout
 Optional Practice Tasks
 
 ??? tip "Optional Practice Task 1 - Making the Form Scrollable"
-    Wrap the form inside a ScrollViewer control. Note: Since the ScrollViewer will now be the outermost element in the grid cell, its grid position must be specified.If implemented, this can be included in the submitted solution.
+    Wrap the form inside a ScrollViewer control. Note: Since the ScrollViewer will now be the outermost element in the grid cell, its grid position must be specified. If implemented, this can be included in the submitted solution.
 
 ??? tip "Optional Practice Task 2 - Fixed-Width Form"
     In the current solution, the form resizes automatically with the window. A good practice task is to modify the form so that it has a fixed width (e.g., 500 pixels) and its height matches the total height of its contents. If you used a StackPanel for the form layout, only three attributes need to be added or modified. The animation below illustrates this behavior. Note: The submitted solution must follow the original requirement (auto-resizing form), not the behavior from this optional task.
