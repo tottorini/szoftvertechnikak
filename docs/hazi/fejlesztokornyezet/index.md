@@ -2,7 +2,7 @@
 
 ## Bevezetés
 
-A félév során a házi feladatok megoldásához a **Visual Studio 2026** fejlesztőkörnyezetet kell használni. Ennek futtatásához Windows operációs rendszerre van szükség. Ha telepítve van már a gépünkre a Visual Studio 2026, akkor a Start menüből indítsuk el a „Visual Studio Installer”-t. Ez induláskor ellenőrzi, hogy elérhető-e a Visual Studio-hoz újabb változat online, és ha igen, az Update gombra kattintva indítsuk is el a legfrissebb verzió telepítését.
+A félév során a házi feladatok megoldásához a **Visual Studio 2026** fejlesztőkörnyezetet kell használni. Ennek futtatásához Windows operációs rendszerre van szükség. Ha telepítve van már a gépünkre a Visual Studio 2026, akkor a Start menüből indítsuk el a „Visual Studio Installer”-t. Ez induláskor ellenőrzi, hogy elérhető-e a Visual Studio-ból újabb változat online, és ha igen, az Update gombra kattintva indítsuk is el a legfrissebb verzió telepítését.
 
 ??? note  "Miért is van szükség Visual Studiora és Windowsra?"
     VS Code, vagy pl. a JetBrains Rider a következők miatt nem használhatók:
