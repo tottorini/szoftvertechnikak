@@ -4,13 +4,13 @@ autoren: bzolka
 
 # 6. HA - Entwurfsmuster (Erweiterbarkeit) 
 
-In dieser Hausaufgabe werden wir die im zugehörigen Labor ([Labor 6 – Entwurfsmuster (Erweiterbarkeit)](../../labor/6-tervezesi-mintak/index.md)) begonnene Datenverarbeitungs-/Anonymisierungsanwendung weiterentwickeln.
+In dieser Hausaufgabe werden wir die im zugehörigen Labor ([Labor 6 – Entwurfsmuster (Erweiterbarkeit)](../../labor/6-tervezesi-mintak/index_ger.md)) begonnene Datenverarbeitungs-/Anonymisierungsanwendung weiterentwickeln.
 
 Die Hausaufgabe basiert auf dem Inhalt der Vorlesungen zu den Entwurfsmustern:
 - Vorlesung 08 – Entwurfsmuster 1: Kapitel „Grundlegende Entwurfsmuster zur Erweiterbarkeit“ – Einführung, Template Method, Strategy, Open/Closed-Prinzip, SRP-Prinzip, weitere Techniken (Methodenreferenz/Lambda)
 - Vorlesung 09 – Entwurfsmuster 1: Dependency Injection-Muster
 
-Den praktischen Hintergrund für die Aufgaben bildet das [Labor 6 – Entwurfsmuster (Erweiterbarkeit)](../../labor/6-tervezesi-mintak/index.md).
+Den praktischen Hintergrund für die Aufgaben bildet das [Labor 6 – Entwurfsmuster (Erweiterbarkeit)](../../labor/6-tervezesi-mintak/index_ger.md).
 
 Ziele der Hausaufgabe:
 
@@ -21,13 +21,12 @@ Eine Beschreibung der benötigten Entwicklungsumgebung ist [hier](../fejlesztoko
 
 ## Das Verfahren für die Eingabe
 
-Auf das Moodle soll ein ZIP-Archiv hochgeladen werden, das die folgenden Anforderungen entspricht:
+- Der grundlegende Ablauf ist derselbe wie zuvor. Erstelle mit GitHub Classroom ein eigenes Repository. Die Einladungs-URL findest du in Moodle (bei Hausaufgabe 4.). Klone das so erstellte Repository. Dieses enthält die erwartete Struktur der Lösung. Nach der Fertigstellung der Aufgaben committe und pushe deine Lösung.
+- Schreibe deinen Neptun-Code in die Datei „neptun.txt“!
+- Öffne `Patterns-Extensibility.sln` aus den geklonten Dateien und arbeite in diesem.
+- :exclamation: Die Aufgaben verlangen, dass du **Screenshots** von bestimmten Teilen deiner Lösung erstellst, um zu belegen, dass du sie selbst angefertigt hast. **Der erwartete Inhalt der Screenshots wird in jeder Aufgabe genau angegeben.** Die Screenshots müssen als Teil der Lösung eingegeben werden. Lege sie im Stammverzeichnis deines Repositorys ab (neben der Datei `neptun.txt`). Dadurch werden die Screenshots zusammen mit dem Inhalt des Git-Repositorys auf GitHub hochgeladen. Da das Repository privat ist, können es außer den Lehrkräfte keine anderen Personen sehen. Falls Inhalte auf den Screenshots erscheinen, die du nicht hochladen möchtest, kannst du diese unkenntlich machen.
+- :exclamation: Für diese Aufgabe gibt es keine inhaltliche Vorabprüfung: Nach jedem Push wird zwar eine Prüfung ausgeführt, diese kontrolliert jedoch nur, ob die Datei `neptun.txt` ausgefüllt ist. Die eigentliche Bewertung erfolgt nach Ablauf der Frist durch die Übungsleiter.
 
-- Die Aufgaben sind aufeinander basiert, deshalb ist es genügend den resultierenden Quellcode am Ende der letzten Aufgabe hochzuladen (Visual Studio Solution Verzeichnis). Der Name des Verzeichnisses soll "Entwurfsmuster_NEPTUN" sein (wo NEPTUN Ihre Neptun-Code ist).
-- Wir erwarten keine schriftliche Begründung oder Beschreibung, aber die komplexe Codeteile sollen mit Kommentaren versehen werden
-- Das ZIP-Archiv darf die Ausgangsdaten (.exe) und die temporären Dateien nicht enthalten. Um diese Bestände zu löschen, Visual Studio soll geöffnet werden und in dem Solution Explorer Rechtsklick an dem „Clean Solution” Menüelement. Das manuelle Löschen von den "obj" und "bin" Verzeichnissen kann auch nötig sein.
-- :exclamation: In den Aufgaben werden Sie aufgefordert, einen **Screenshot** von einem Teil Ihrer Lösung zu machen, da dies beweist, dass Sie Ihre Lösung selbst erstellt haben. **Der erwartete Inhalt der Screenshots ist immer in der Aufgabe angegeben.** Die Screenshots sollten als Teil der Lösung eingegeben, also innerhalb dem ZIP-Archiv auf das Moodle hochgeladen werden.
-Wenn Sie Inhalte im Screenshot haben, die Sie nicht hochladen möchten, können Sie diese aus dem Screenshot ausblenden.
 
 ## Aufgabe 1
 
@@ -44,7 +43,7 @@ Der Ausgangszustand der Hausaufgabe entspricht dem Endzustand des 6. Labors: Im 
 !!! note "Dependency Injection (manuell) vs. Dependency Injection Container"
     Im Labor sowie in dieser Hausaufgabe verwenden wir die einfache, manuelle Variante der Dependency Injection (auch in der Vorlesung behandelt). In diesem Fall werden die Abhängigkeiten einer Klasse manuell instanziiert und über den Konstruktor übergeben. In komplexeren Anwendungen wird häufig ein Dependency Injection Container verwendet, in den registriert werden kann, welche Implementierung für einen bestimmten Interface-Typ verwendet werden soll. Der Einsatz solcher DI-Container ist nicht Teil der Lehrveranstaltung. Die manuelle Variante hingegen schon – und sie ist besonders wichtig, da ohne sie der Einsatz des Strategy-Musters keinen Sinn ergibt.
 
-:warning: Beantworte in eigenen Worten kurz die folgenden Fragen in der Datei `readme.md` *Feladatok*:
+:warning: Beantworte die folgenden Fragen kurz mit deinen eigenen Worten in der Datei `readme.md`, die sich im Ordner *Feladatok* befindet (also nicht im Stammverzeichnis!!!):
 
 - Was ermöglicht das Strategy-Muster in Kombination mit Dependency Injection im Rahmen des Laborbeispiels, und was sind die Vorteile ihrer gemeinsamen Verwendung?
 - Was bedeutet es, dass durch die Anwendung des Strategy-Musters das Open/Closed-Prinzip in der Lösung umgesetzt wird? (Hinweise zum Open/Closed-Prinzip findest du in der Vorlesung und im Labor-Material.)
@@ -199,6 +198,9 @@ Erstelle einen Integrationstest für die Klasse `Anonymizer` wie folgt:
     3. Führe den Test über die Schaltflächen in der Symbolleiste oben im Test Explorer aus. Alternativ kannst du den Test auch debuggen: Rechtsklick auf den Test > „Debug“ – das ist sehr hilfreich, wenn der Test fehlschlägt und du mit Haltepunkten Schritt für Schritt den Code durchgehen und Variablenwerte überprüfen möchtest.
     4. Wenn der Test fehlerfrei durchläuft, wird das zugehörige Symbol grün angezeigt. Bei Fehlern wird es rot, und im unteren Bereich des Test Explorers erhältst du weitere Informationen zur Fehlermeldung.
 
+!!! example "Aufgabe 6 – EINGABE"
+    - Füge einen Screenshot ein, auf dem der Quellcode deines Integrationstests zu sehen ist (`f6-IMSc.png`).
+
 ## Optionale Aufgabe 7 – Erstellung eines Unit-Tests
 
 Mit der Lösung dieser Aufgabe können +2 IMSc-Punkte erzielt werden.
@@ -220,6 +222,9 @@ Erstelle einen Unit-Test für die Klasse `Anonymizer`, der überprüft, ob die M
 - Tipp: Erstelle eigene Implementierungen von `IInputReader` und `IAnonymizerAlgorithm` (und verwende den `Anonymizer` damit), **die passende Testdaten liefern und/oder zur Laufzeit Daten sammeln, damit nach dem Ausführen überprüft werden kann, ob die Bedingungen erfüllt wurden**. Diese Strategy-Implementierungen sollen ausschließlich im Testprojekt erstellt werden, da sie nur für Testzwecke gedacht sind.
 
 Zur weiteren Übung kannst du auch einen weiteren Unit-Test erstellen, der überprüft, ob alle Eingabedaten auch in der Ausgabe enthalten sind.
+
+!!! example "Aufgabe 7 – EINGABE"
+    - Füge einen Screenshot ein, auf dem der Quellcode deines Unit-Tests zu sehen ist (`f7-IMSc.png`).
 
 ## Zusammenfassung
 
